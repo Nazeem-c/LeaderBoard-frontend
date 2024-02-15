@@ -1,0 +1,41 @@
+
+.menulist{
+    padding-bottom: 10px;
+    gap: 1rem;
+
+}
+.item{
+
+    display: flex;
+width: 230px;
+padding: 10px 20px;
+align-items: flex-end;
+gap: 20px;
+border-radius: 5px;
+background: #ffffff;
+
+}
+.menuImahe{
+
+
+}
+
+.icon{
+width: 24px;
+height: 24px;
+flex-shrink: 0;
+opacity: 50%;
+}
+
+.menutext{
+
+}
+
+.menutext{
+    color: var(--Text-10, #A9A9A9);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

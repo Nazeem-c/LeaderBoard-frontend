@@ -1,0 +1,75 @@
+.home{
+    height: 100vh;
+    background: #F8F8F8;
+}
+.columns{
+    gap: 100px;
+    padding-top: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
+    
+}
+
+.primaryFOnt1{
+    color: var(--Secondary, #9747FF);
+    font-family: "Plus Jakarta Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+    letter-spacing: -0.48px;
+}
+.primaryFOnt2{
+    color: var(--Black, #1A202C);
+    font-family: "Plus Jakarta Sans";
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 83%;
+    letter-spacing: -1.92px;
+}
+.primaryFOnt3{
+    color: var(--Black, #1A202C);
+    font-family: "Plus Jakarta Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+}
+.primaryFOnt4{
+    color: #000;
+    font-family: "Plus Jakarta Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.32px;
+}
+.primaryFOnt5{
+    color: var(--Secondary, #9747FF);
+    font-family: "Plus Jakarta Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.4px;
+    text-decoration-line: underline;
+}
+.primaryFOnt6{
+    color: var(--Secondary, #9747FF);
+    font-family: "Plus Jakarta Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 30px */
+    letter-spacing: -0.4px;
+}
+.primaryFOnt7{
+    color: #000;
+    font-family: "Plus Jakarta Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.32px;
+}
