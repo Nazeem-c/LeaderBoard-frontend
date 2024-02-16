@@ -10,13 +10,12 @@ function LeaderBoardRotes() {
     <div>
       <div className="flexColStart">
         <NavMenu />
-        <div className="Color fullwidth">
-          {/* <h1>gfsdjs</h1> */}
+        <div className="fullwidth">
           <Routes>
-            <Route path="/student" element={<StudentBoard />} />
+            <Route path="/" element={<StudentBoard />} />
             <Route path="/college" element={<CollegeBoard />} />
             <Route
-              path="/leaderboard/department"
+              path="/department"
               element={<DepartmentBoard />}
             />
           </Routes>

@@ -8,7 +8,7 @@ function NavMenu() {
         <div className={`${Styles.container}`}>
                     <div className={`${Styles.menu}`}>
                         <div className={`${Styles.menucontainer} flexStart`}>
-                            <Link to="/leaderboard/student"><div className={`${Styles.menuItem}`}>
+                            <Link to="/leaderboard"><div className={`${Styles.menuItem}`}>
                                 <a>Student</a>
                             </div></Link>
                             

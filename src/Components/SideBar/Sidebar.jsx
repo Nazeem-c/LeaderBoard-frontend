@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from 'react';
 import Styles from "./Sidebar.module.css";
 import { FaHome, FaList, FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+
+
   return (
     <div className="Sidebar">
       <div className={Styles.container}>
