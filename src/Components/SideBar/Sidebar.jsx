@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Styles from "./Sidebar.module.css";
 import { FaHome, FaList, FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
-
+const Sidebar = ({obj}) => {
+  
 
   return (
     <div className="Sidebar">
@@ -15,10 +15,23 @@ const Sidebar = () => {
           </div>
           <div className={Styles.menuColumns}>
             <div className={`${Styles.menulist} flexColStart`}>
-              <Link to="/">
+              {obj.map((item, index) => (
+                <Link to={`/${item.link}`}>
+                  <div key={index} className={`${Styles.item} button`}>
+                    <div className={Styles.menuImahe}>
+                    
+                        {item.icon && React.createElement(item.icon, {className:Styles.icon} )}
+                     
+                    </div>
+                    <span className={Styles.menutext}>{item.name}</span>
+                  </div>
+                </Link>
+              ))}
+
+              {/* <Link to="/">
                 <div className={`${Styles.item} button`}>
                   <div className={Styles.menuImahe}>
-                    <FaHome className={Styles.icon} />
+                    {item.icon && React.createElement(item.icon)}
                   </div>
                   <div>
                     <h1 className={Styles.menutext}>Home</h1>
@@ -44,7 +57,7 @@ const Sidebar = () => {
                     <h1 className={Styles.menutext}>Login</h1>
                   </div>
                 </div>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

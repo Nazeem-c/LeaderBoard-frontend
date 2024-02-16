@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Styles from "./CollegeBoard.module.css";
-import { getLeaderboardCollege } from "../../../Services/Public/Public";
+import Styles from "./StudentBoard.module.css";
+import { getLeaderboardStudent } from "../../../../Services/Public/Public";
 
-function CollegeBoard() {
+function StudentBoard() {
   const [leaderboardData, setLeaderboardData] = useState(null);
  
   const fetchData = async () => {
     try {
       const params = {
-        dep_name: dep_name,
+        clg_name: encodeURIComponent(clg_name),
+        dep_name: encodeURIComponent(dep_name),
         batch: batch,
       };
   
-      const response = await getLeaderboardCollege(params);
+      const response = await getLeaderboardStudent(params);
       
       // Check if the API response has the expected structure
       if (response && response.statusCode === 200 && response.responseData && response.responseData.leaderboard) {
@@ -29,18 +30,20 @@ function CollegeBoard() {
     fetchData();
   }, []);
 
-
+  const [clg_name, setclg_name] = useState("");
   const [dep_name, setdep_name] = useState("");
   const [batch, setbatch] = useState("");
 
   const handleInputChange = (e, inputNumber) => {
     const value = e.target.value;
     switch (inputNumber) {
-      
       case 1:
-        setdep_name(value);
+        setclg_name(value);
         break;
       case 2:
+        setdep_name(value);
+        break;
+      case 3:
         setbatch(value);
         break;
       default:
@@ -53,12 +56,18 @@ function CollegeBoard() {
         <div className={`${Styles.container} flexColStart innerWidth`}>
           <div className={`${Styles.filters} flexStart  innerWidth`}>
             <div className={`${Styles.filterinputs}`}>
-              
+              <input
+                type="text"
+                value={clg_name}
+                onChange={(e) => handleInputChange(e, 1)}
+                placeholder="College"
+                className={Styles.inputField}
+              />
 
               <input
                 type="text"
                 value={dep_name}
-                onChange={(e) => handleInputChange(e, 1)}
+                onChange={(e) => handleInputChange(e, 2)}
                 placeholder="Department"
                 className={Styles.inputField}
               />
@@ -66,7 +75,7 @@ function CollegeBoard() {
               <input
                 type="text"
                 value={batch}
-                onChange={(e) => handleInputChange(e, 2)}
+                onChange={(e) => handleInputChange(e, 3)}
                 placeholder="Batch"
                 className={Styles.inputField}
               />
@@ -82,18 +91,18 @@ function CollegeBoard() {
               <thead className={Styles.tablehead}>
                 <tr>
                   <th>Ranking</th>
-                  <th>College ID</th>
-                  <th>College Name</th>
-                  <th>Pass Percentage</th>
+                  <th>Student ID</th>
+                  <th>Student Name</th>
+                  <th>Total Score</th>
                 </tr>
               </thead>
               <tbody className={Styles.tablebody}>
-                {leaderboardData?.map((college) => (
-                  <tr key={college.clg_id}>
-                    <td>{college.ranking}</td>
-                    <td>{college.clg_id}</td>
-                    <td>{college.clg_name}</td>
-                    <td>{college.pass_percentage}</td>
+                {leaderboardData?.map((student) => (
+                  <tr key={student.stud_id}>
+                    <td>{student.ranking}</td>
+                    <td>{student.stud_id}</td>
+                    <td>{student.stud_name}</td>
+                    <td>{student.total_marks}</td>
                     
                   </tr>
                 ))}
@@ -106,4 +115,4 @@ function CollegeBoard() {
   );
 }
 
-export default CollegeBoard;
+export default StudentBoard;
