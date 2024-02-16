@@ -23,7 +23,7 @@ export const getLeaderboardStudent = async (params) => {
 export const getLeaderboardCollege = async (params) => {
   
   try {
-    const response = await axios.get(`${API_URL}/leaderboard`, {
+    const response = await axios.get(`${API_URL}/collegeleaderboard`, {
       params: params,
     });
     // console.log('API Response:', response); 

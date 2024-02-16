@@ -58,7 +58,7 @@ function CollegeBoard() {
               <input
                 type="text"
                 value={dep_name}
-                onChange={(e) => handleInputChange(e, 2)}
+                onChange={(e) => handleInputChange(e, 1)}
                 placeholder="Department"
                 className={Styles.inputField}
               />
@@ -66,7 +66,7 @@ function CollegeBoard() {
               <input
                 type="text"
                 value={batch}
-                onChange={(e) => handleInputChange(e, 3)}
+                onChange={(e) => handleInputChange(e, 2)}
                 placeholder="Batch"
                 className={Styles.inputField}
               />
@@ -89,11 +89,11 @@ function CollegeBoard() {
               </thead>
               <tbody className={Styles.tablebody}>
                 {leaderboardData?.map((college) => (
-                  <tr key={college.stud_id}>
+                  <tr key={college.clg_id}>
                     <td>{college.ranking}</td>
-                    <td>{college.stud_id}</td>
-                    <td>{college.stud_name}</td>
-                    <td>{college.total_marks}</td>
+                    <td>{college.clg_id}</td>
+                    <td>{college.clg_name}</td>
+                    <td>{college.pass_percentage}</td>
                     
                   </tr>
                 ))}
