@@ -1,22 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Styles from "./StudentBoard.module.css";
+import { getLeaderboardStudent } from "../../../Services/Public/Public";
 
 function StudentBoard() {
-  const [input1, setInput1] = useState("");
-  const [input2, setInput2] = useState("");
-  const [input3, setInput3] = useState("");
+  const [leaderboardData, setLeaderboardData] = useState(null);
+ 
+  const fetchData = async () => {
+    try {
+      const params = {
+        clg_name: clg_name,
+        dep_name: dep_name,
+        batch: batch,
+      };
+  
+      const response = await getLeaderboardStudent(params);
+      
+      // Check if the API response has the expected structure
+      if (response && response.statusCode === 200 && response.responseData && response.responseData.leaderboard) {
+        setLeaderboardData(response.responseData.leaderboard);
+      } else {
+        console.error('Invalid API response structure:', response);
+      }
+    } catch (error) {
+      console.error('Error fetching leaderboard data:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const [clg_name, setclg_name] = useState("");
+  const [dep_name, setdep_name] = useState("");
+  const [batch, setbatch] = useState("");
 
   const handleInputChange = (e, inputNumber) => {
     const value = e.target.value;
     switch (inputNumber) {
       case 1:
-        setInput1(value);
+        setclg_name(value);
         break;
       case 2:
-        setInput2(value);
+        setdep_name(value);
         break;
       case 3:
-        setInput3(value);
+        setbatch(value);
         break;
       default:
         break;
@@ -30,7 +58,7 @@ function StudentBoard() {
             <div className={`${Styles.filterinputs}`}>
               <input
                 type="text"
-                value={input1}
+                value={clg_name}
                 onChange={(e) => handleInputChange(e, 1)}
                 placeholder="College"
                 className={Styles.inputField}
@@ -38,7 +66,7 @@ function StudentBoard() {
 
               <input
                 type="text"
-                value={input2}
+                value={dep_name}
                 onChange={(e) => handleInputChange(e, 2)}
                 placeholder="Department"
                 className={Styles.inputField}
@@ -46,14 +74,16 @@ function StudentBoard() {
 
               <input
                 type="text"
-                value={input3}
+                value={batch}
                 onChange={(e) => handleInputChange(e, 3)}
                 placeholder="Batch"
                 className={Styles.inputField}
               />
             </div>
             <div className={`${Styles.filterbutton} `}>
-              <button className={Styles.button}> Filter</button>
+              <button onClick={fetchData} className={Styles.button}>
+                Filter
+              </button>
             </div>
           </div>
           <div className={`${Styles.maintable} innerWidth`}>
@@ -67,60 +97,15 @@ function StudentBoard() {
                 </tr>
               </thead>
               <tbody className={Styles.tablebody}>
-                <tr>
-                  <td>John Doe</td>
-                  <td>25</td>
-                  <td>New York</td>
-                  <td>chjbncs</td>
-                </tr>
-                <tr>
-                  <td>John Doe</td>
-                  <td>25</td>
-                  <td>New York</td>
-                  <td>chjbncs</td>
-                </tr>
-                <tr>
-                  <td>John Doe</td>
-                  <td>25</td>
-                  <td>New York</td>
-                  <td>chjbncs</td>
-                </tr>
-                <tr>
-                  <td>John Doe</td>
-                  <td>25</td>
-                  <td>New York</td>
-                  <td>chjbncs</td>
-                </tr>
-                <tr>
-                  <td>John Doe</td>
-                  <td>25</td>
-                  <td>New York</td>
-                  <td>chjbncs</td>
-                </tr>
-                <tr>
-                  <td>John Doe</td>
-                  <td>25</td>
-                  <td>New York</td>
-                  <td>chjbncs</td>
-                </tr><tr>
-                  <td>John Doe</td>
-                  <td>25</td>
-                  <td>New York</td>
-                  <td>chjbncs</td>
-                </tr>
-                <tr>
-                  <td>John Doe</td>
-                  <td>25</td>
-                  <td>New York</td>
-                  <td>chjbncs</td>
-                </tr><tr>
-                  <td>John Doe</td>
-                  <td>25</td>
-                  <td>New York</td>
-                  <td>chjbncs</td>
-                </tr>
-
-                {/* Add more rows as needed */}
+                {leaderboardData?.map((student) => (
+                  <tr key={student.stud_id}>
+                    <td>{student.ranking}</td>
+                    <td>{student.stud_id}</td>
+                    <td>{student.stud_name}</td>
+                    <td>{student.total_marks}</td>
+                    
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
