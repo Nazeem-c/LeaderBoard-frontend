@@ -34,3 +34,44 @@ export const getLeaderboardCollege = async (params) => {
     throw error;
   }
 };
+
+
+
+export const getCollege = async () => {
+  
+  try {
+    const response = await axios.get(`${API_URL}/collegelistselect`);
+    // console.log('API Response:', response); 
+    // console.log('content', response.data); 
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching leaderboard data:', error);
+    throw error;
+  }
+};
+
+export const getDepartments= async () => {
+  
+  try {
+    const response = await axios.get(`${API_URL}/departmentslistselect`);
+    // console.log('API Response:', response); 
+    // console.log('content', response.data); 
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching leaderboard data:', error);
+    throw error;
+  }
+};
+
+export const getBatches = async () => {
+  
+  try {
+    const response = await axios.get(`${API_URL}/btacheslistselect`);
+    // console.log('API Response:', response); 
+    // console.log('content', response.data); 
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching leaderboard data:', error);
+    throw error;
+  }
+};

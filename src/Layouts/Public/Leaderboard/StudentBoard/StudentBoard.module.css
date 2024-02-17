@@ -1,18 +1,47 @@
 
-/* .wrapper{
-    position: fixed;
+.wrapper{
+    /* position: fixed;
     top: 70px;
     width: 100%;
-    background-color: #F8F8F8;
-} */
+    background-color: #F8F8F8; */
+    padding-left: 3.5rem;
+    padding-top: 2.5rem;
+}
 
 .container{
     gap: 1rem;
  
 }
 
+.headerbar{
+gap: 2px;
+}
+
+.header{
+  color: var(--Gray-1, #000000);
+font-family: "Plus Jakarta Sans";
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 100%; /* 36px */
+letter-spacing: 0.60px;
+}
+
+.subtitle{
+  color: var(--Gray-1, #6d6c6c);
+font-family: "Plus Jakarta Sans";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 21px */
+letter-spacing: 0.2px;
+}
+
 .filterbutton{
     width: 70px;
+}
+.filterinputs{
+  gap: 1px;
 }
 
 .button{
@@ -31,26 +60,26 @@
     
   }
   
-  .inputField {
+  .selectField{
     height: 52px;
     width: 430px;
     text-align: center;
     border: none;
-    border-bottom: 2px solid #e2e2e2;
+    /* border-bottom: 2px solid #e2e2e2;
     border-right: 0.5px solid #e2e2e2;
-    border-left: 0.5px solid #e2e2e2;
-    color: #000; 
+    border-left: 0.5px solid #e2e2e2; */
+    color: #9747FF; 
     /* background-color: #f0f0f0; */
     font-weight: normal;
     transition: border-bottom-color 0.3s, color 0.3s, font-weight 0.3s;
   }
   
-  .inputField:focus {
+  /* .selectField:focus {
     border-bottom-color: #9747FF;
     color: #9747FF; 
     font-weight: bold;
     outline: none;
-  }
+  } */
   
   
   .customTable{
@@ -73,3 +102,60 @@
   .maintable{
     width: 100%;
   }
+
+/* Your existing styles... */
+
+/* Sample styles for the Select component */
+.Select {
+  width: 100%; /* Adjust the width as needed */
+}
+
+.selectField {
+  font-size: 16px; /* Adjust the font size */
+  /* border: 1px solid #ccc;  */
+  /* height: 52px; */
+  /* border: 2px solid violet;  */
+  /* height: 60px; */
+  width: 429px;
+  border-radius: 5px; /* Border radius */
+  /* padding: 10px;  */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Style for the dropdown menu */
+.Select__menu {
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+/* Style for each option in the dropdown menu */
+.Select__option {
+
+  
+  padding: 10px; /* Padding inside each option */
+}
+
+/* Style for the selected option */
+.Select__single-value {
+  
+  color: #303030; /* Text color for the selected option */
+}
+
+/* Style for the placeholder text */
+.Select__placeholder {
+  
+  color: #999; /* Placeholder text color */
+}
+
+/* Style for the arrow icon */
+.Select__indicator {
+  color: #333; /* Color of the arrow icon */
+}
+
+/* Style for the arrow icon when the dropdown is open */
+.Select__indicator--is-open {
+  transform: rotate(180deg); /* Rotate the arrow when the dropdown is open */
+}
+
+/* Your existing styles... */

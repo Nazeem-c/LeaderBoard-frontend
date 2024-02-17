@@ -18,7 +18,7 @@
     z-index: 2;
 }
 .menuItem{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 100;
   padding: .6rem 1.4rem;
   color: #000000;
@@ -29,7 +29,7 @@
   /* transition: all 300ms ease-in; */
 }
 .menuItem1{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
 padding: .6rem 1.4rem;
 color: #000000;
@@ -40,7 +40,7 @@ color: #000000;
 /* transition: all 300ms ease-in; */
 }
 .menuItem2{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
 padding: .6rem 1.4rem;
 color: #000000;
