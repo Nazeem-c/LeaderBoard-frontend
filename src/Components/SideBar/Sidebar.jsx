@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import Styles from "./Sidebar.module.css";
-import { FaHome, FaList, FaSignInAlt } from "react-icons/fa";
+// import { FaHome, FaList, FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Sidebar = ({obj}) => {
+const Sidebar = ({ obj }) => {
+  const [activeTab, setActiveTab] = useState("home");
   
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    console.log("pressed");
+  };
 
   return (
     <div className="Sidebar">
@@ -16,14 +22,22 @@ const Sidebar = ({obj}) => {
           <div className={Styles.menuColumns}>
             <div className={`${Styles.menulist} flexColStart`}>
               {obj.map((item, index) => (
-                <Link to={`/${item.link}`}>
-                  <div key={index} className={`${Styles.item} button`}>
+                <Link to={`/${item.link}`} key={index}>
+                  <div
+                    onClick={() => handleTabClick(item.name.toLowerCase())}
+                    className={`${Styles.item} ${
+                      activeTab === item.name.toLowerCase()
+                        ? "active-button"
+                        : "button"
+                    } `}
+                  >
                     <div className={Styles.menuImahe}>
-                    
-                        {item.icon && React.createElement(item.icon, {className:Styles.icon} )}
-                     
+                      {item.icon &&
+                        React.createElement(item.icon, {
+                          className: Styles.icon,
+                        })}
                     </div>
-                    <span className={Styles.menutext}>{item.name}</span>
+                    <span className={`${Styles.menutext}`}>{item.name}</span>
                   </div>
                 </Link>
               ))}

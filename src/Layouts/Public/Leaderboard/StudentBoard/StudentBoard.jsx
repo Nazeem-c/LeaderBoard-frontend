@@ -87,7 +87,7 @@ function StudentBoard() {
             </div>
           </div>
           <div className={`${Styles.maintable} innerWidth`}>
-            <table className={Styles.customTable}>
+            <table className={`${Styles.customTable} paddings`}>
               <thead className={Styles.tablehead}>
                 <tr>
                   <th>Ranking</th>

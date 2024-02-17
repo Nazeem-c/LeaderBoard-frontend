@@ -49,7 +49,7 @@ function CollegeBoard() {
   };
   return (
     <div>
-      <div className={`${Styles.wrapper} paddings`}>
+      <div className={`${Styles.wrapper} innerWidth paddings`}>
         <div className={`${Styles.container} flexColStart innerWidth`}>
           <div className={`${Styles.filters} flexStart  innerWidth`}>
             <div className={`${Styles.filterinputs}`}>

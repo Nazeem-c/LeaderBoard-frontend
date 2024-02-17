@@ -1,8 +1,10 @@
-
+/* 
 .wrapper{
     position: fixed;
     top: 40px;
-}
+    background-color: #F8F8F8;
+    height: 100vh;
+} */
 
 .container{
     gap: 1rem;
@@ -52,7 +54,7 @@
   
   
   .customTable {
-    width: 102%; /* Maximum width */
+    width: 1383px; /* Maximum width */
     border-collapse: collapse; /* Remove default cell spacing */
   }
   
