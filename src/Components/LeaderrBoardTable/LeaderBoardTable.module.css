@@ -1,0 +1,21 @@
+
+.customTable{
+    width: 1383px;
+    /* margin-right: 20px; */
+    border-collapse: collapse;/* Remove default cell spacing */
+  }
+  
+  .tablehead th, .tablebody td {
+    border: 1px solid #ddd; /* Border for each cell */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .tablehead th {
+    background-color: #f2f2f2; /* Background color for header cells */
+  }
+
+
+  .maintable{
+    width: 100%;
+  }

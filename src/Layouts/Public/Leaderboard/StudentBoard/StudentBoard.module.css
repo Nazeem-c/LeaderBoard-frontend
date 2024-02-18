@@ -36,7 +36,7 @@ font-weight: 400;
 line-height: 150%; /* 21px */
 letter-spacing: 0.2px;
 }
-
+/*------------------------------------------------*/
 .filterbutton{
     width: 70px;
 }
@@ -73,7 +73,7 @@ letter-spacing: 0.2px;
     font-weight: normal;
     transition: border-bottom-color 0.3s, color 0.3s, font-weight 0.3s;
   }
-  
+  /*-------------------------------------------------------*/
   /* .selectField:focus {
     border-bottom-color: #9747FF;
     color: #9747FF; 

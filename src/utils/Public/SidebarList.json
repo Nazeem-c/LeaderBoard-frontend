@@ -1,0 +1,17 @@
+[
+    {
+      "icon": "FaHome",
+      "name": "Home",
+      "link": ""
+    },
+    {
+      "icon": "FaList",
+      "name": "Leaderboard",
+      "link": "leaderboard"
+    },
+    {
+     "icon": "FaSignInAlt",
+     " name": "Login",
+      "link": "login"
+    }
+  ]

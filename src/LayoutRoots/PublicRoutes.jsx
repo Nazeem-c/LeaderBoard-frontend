@@ -9,6 +9,7 @@ import { FaHome, FaList, FaSignInAlt } from "react-icons/fa";
 // import CollegeBoard from "../Components/Leaderboard/CollegeBoard/CollegeBoard";
 // import DepartmentBoard from "../Components/Leaderboard/DepartmentBoard/DepartmentBoard";
 
+
 import LeaderBoardRotes from "./LeaderBoardRotes";
 
 function PublicRoutes() {
