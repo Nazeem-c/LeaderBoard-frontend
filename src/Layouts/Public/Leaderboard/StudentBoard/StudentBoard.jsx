@@ -16,6 +16,7 @@ function StudentBoard() {
   const [collegeOptions, setCollegeOptions] = useState([]);
   const [departmentOptions, setDepartmentOptions] = useState([]);
   const [batchOptions, setBatchOptions] = useState([]);
+  
   //---------------------------------------------------------
   const fetchColleges = async () => {
     try {

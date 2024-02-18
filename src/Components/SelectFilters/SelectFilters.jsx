@@ -16,6 +16,9 @@ function SelectFilters({
     const [clg_name, setClg_name] = useState("");
     const [dep_name, setDep_name] = useState("");
     const [batch, setBatch] = useState("");
+
+
+    
   return (
     <form
             onSubmit={(e) => {
