@@ -170,7 +170,7 @@ function StudentBoard() {
      const defaultLabels = ["Select College", "Select Department", "Select Batch"];
 
     // If the selected label is one of the default labels, set the value to null
-    const sanitizedValue = defaultLabels.includes(value) ? '' : value;
+    const sanitizedValue = defaultLabels.includes(value) ? null : value;
 
     switch (inputNumber) {
       case 1:
