@@ -2,9 +2,10 @@
 import React from "react";
 import Styles from "./LeaderBoardTable.module.css";
 
-function LeaderBoardTable({ leaderboardData }) {
+function LeaderBoardTable({ leaderboardData, error  }) {
   return (
     <div className={`${Styles.maintable} innerWidth`}>
+    {leaderboardData && !error && (
       <table className={`${Styles.customTable} paddings`}>
         <thead className={Styles.tablehead}>
           <tr>
@@ -15,7 +16,7 @@ function LeaderBoardTable({ leaderboardData }) {
           </tr>
         </thead>
         <tbody className={Styles.tablebody}>
-          {leaderboardData?.map((student) => (
+          {leaderboardData.map((student) => (
             <tr key={student.stud_id}>
               <td>{student.ranking}</td>
               <td>{student.stud_id}</td>
@@ -25,7 +26,9 @@ function LeaderBoardTable({ leaderboardData }) {
           ))}
         </tbody>
       </table>
-    </div>
+    )}
+  </div>
+  
   );
 }
 

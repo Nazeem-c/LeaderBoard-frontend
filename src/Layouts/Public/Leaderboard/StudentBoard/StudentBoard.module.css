@@ -37,3 +37,15 @@ line-height: 150%; /* 21px */
 letter-spacing: 0.2px;
 }
 /*------------------------------------------------*/
+
+.Error{
+  width: 100%;
+  font-weight: 500;
+  color: rgb(255, 0, 0);
+}
+.Opps{
+
+  width: 500px;
+  height: 100vh;
+  color: aqua;
+}

@@ -12,11 +12,12 @@ import SelectFilters from "../../../../Components/SelectFilters/SelectFilters";
 import LeaderBoardTable from "../../../../Components/LeaderrBoardTable/LeaderBoardTable";
 
 function StudentBoard() {
+  const [error, setError] = useState(null);
   const [leaderboardData, setLeaderboardData] = useState(null);
   const [collegeOptions, setCollegeOptions] = useState([]);
   const [departmentOptions, setDepartmentOptions] = useState([]);
   const [batchOptions, setBatchOptions] = useState([]);
-  
+
   //---------------------------------------------------------
   const fetchColleges = async () => {
     try {
@@ -127,7 +128,11 @@ function StudentBoard() {
 
       const response = await getLeaderboardStudent(params);
 
-      if (
+      if (response.statusCode === 404) {
+        setError(response.responseData.error);
+        // Clear the leaderboard data when there is an error
+        setLeaderboardData(null);
+      } else if (
         response &&
         response.statusCode === 200 &&
         response.responseData &&
@@ -135,11 +140,19 @@ function StudentBoard() {
       ) {
         console.log(clg_name);
         setLeaderboardData(response.responseData.leaderboard);
+        // Clear the error when the data is successfully loaded
+        setError(null);
       } else {
         console.error("Invalid API response structure:", response);
+        // Set an error if the response structure is unexpected
+        setError("Unexpected API response");
+        // Clear the leaderboard data when there is an error
+        setLeaderboardData(null);
       }
+      
     } catch (error) {
       console.error("Error fetching leaderboard data:", error);
+      setError("Error fetching leaderboard data. Please try again.");
     }
   };
 
@@ -189,7 +202,12 @@ function StudentBoard() {
             handleInputChange={handleInputChange}
             fetchData={fetchData}
           />
-          <LeaderBoardTable leaderboardData={leaderboardData} />
+          {error && <div className={`${Styles.errorclass}`}>
+          <p className={`${Styles.Error}`}>{error}</p>
+          <div className={`${Styles.Opps}`}></div>
+          </div>}
+          <LeaderBoardTable leaderboardData={leaderboardData} error={error} />
+          
         </div>
       </div>
     </div>
