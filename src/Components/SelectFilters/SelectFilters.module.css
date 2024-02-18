@@ -1,8 +1,12 @@
 .filterbutton{
     width: 70px;
+    gap: 5px;
 }
 .filterinputs{
   gap: 1px;
+}
+.filters{
+    gap: 5px;
 }
 
 .button{
@@ -50,7 +54,7 @@
     /* height: 52px; */
     /* border: 2px solid violet;  */
     /* height: 60px; */
-    width: 429px;
+    width: 389px;
     border-radius: 5px; /* Border radius */
     /* padding: 10px;  */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */

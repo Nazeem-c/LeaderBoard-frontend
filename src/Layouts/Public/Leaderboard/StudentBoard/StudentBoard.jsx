@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Styles from "./StudentBoard.module.css";
-import Select from "react-select";
+// import Select from "react-select";
 import {
   getLeaderboardStudent,
   getCollege,
@@ -165,17 +165,22 @@ function StudentBoard() {
   const [batch, setbatch] = useState("");
 
   const handleInputChange = (selectedOption, inputNumber) => {
-    const value = selectedOption ? selectedOption.label : ""; // use label instead of value
+    const value = selectedOption ? selectedOption.label : "null"; // use label instead of value
+
+     const defaultLabels = ["Select College", "Select Department", "Select Batch"];
+
+    // If the selected label is one of the default labels, set the value to null
+    const sanitizedValue = defaultLabels.includes(value) ? '' : value;
 
     switch (inputNumber) {
       case 1:
-        setclg_name(value);
+        setclg_name(sanitizedValue);
         break;
       case 2:
-        setdep_name(value);
+        setdep_name(sanitizedValue);
         break;
       case 3:
-        setbatch(value);
+        setbatch(sanitizedValue);
         break;
       default:
         break;
