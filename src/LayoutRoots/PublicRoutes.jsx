@@ -5,6 +5,7 @@ import Sidebar from "../Components/SideBar/Sidebar";
 import Login from "../Components/Login/Login";
 import Home from "../Components/Home/Home";
 import { FaHome, FaList, FaSignInAlt } from "react-icons/fa";
+import Styles from './PublicRoutes.module.css'
 // import StudentBoard from "../Components/Leaderboard/StudentBoard/StudentBoard";
 // import CollegeBoard from "../Components/Leaderboard/CollegeBoard/CollegeBoard";
 // import DepartmentBoard from "../Components/Leaderboard/DepartmentBoard/DepartmentBoard";
@@ -32,10 +33,10 @@ function PublicRoutes() {
     },
   ];
   return (
-    <div className="flexStart">
+    <div className="flexStart innerWidth">
       <BrowserRouter>
-        <Sidebar obj={obj} />
-        <div className="fullwidth">
+        <Sidebar obj={obj} className={Styles.Sidebar} />
+        <div className="fullwidth innerWidth">
           <Routes>
             <Route index element={<Home />} />
             <Route path="/leaderboard/*" element={<LeaderBoardRotes />}/>
