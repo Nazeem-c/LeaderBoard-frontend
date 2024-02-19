@@ -3,7 +3,7 @@ import PublicRoutes from "./LayoutRoots/PublicRoutes";
 
 function App() {
   return (
-    <div className="App innerWIdth">
+    <div className="App innerWIdth ">
       <PublicRoutes />
     </div>
   );

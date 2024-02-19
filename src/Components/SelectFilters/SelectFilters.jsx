@@ -12,6 +12,7 @@ function SelectFilters({
   handleInputChange,
   fetchData,
 }) {
+  
   // Default values for Select components
   const defaultCollegeOption = { value: "", label: "Select College" };
   const defaultDepartmentOption = { value: "", label: "Select Department" };
@@ -22,17 +23,47 @@ function SelectFilters({
   const [dep_name, setDep_name] = useState(defaultDepartmentOption);
   const [batch, setBatch] = useState(defaultBatchOption);
 
+  const [resetTrigger, setResetTrigger] = useState(false);
+
+  const [reloadSelects, setReloadSelects] = useState(false);
   // Function to reset Select values to defaults
-  const resetSelectValues = () => {
+  // Function to reset Select values to defaults
+const resetSelectValues = () => {
+  setClg_name(defaultCollegeOption);
+  setDep_name(defaultDepartmentOption);
+  setBatch(defaultBatchOption);
+  console.log("Reset button triggered");
+  console.log(defaultCollegeOption);
+  console.log(defaultDepartmentOption);
+  console.log(defaultBatchOption);
+  setResetTrigger(true);
+  setReloadSelects(true);
+
+  
+
+  // Reset the selected options for each Select component
+  handleInputChange(defaultCollegeOption, 1);
+  handleInputChange(defaultDepartmentOption, 2);
+  handleInputChange(defaultBatchOption, 3);
+};
+
+useEffect(() => {
+  if (resetTrigger) {
     setClg_name(defaultCollegeOption);
     setDep_name(defaultDepartmentOption);
     setBatch(defaultBatchOption);
-    console.log("Reset button triggered");
-    console.log(defaultCollegeOption);
-    console.log(defaultDepartmentOption);
-    console.log(defaultBatchOption);
-    window.location.reload();
-  };
+    // Trigger the fetchData function after resetting values
+    fetchData(defaultCollegeOption, defaultDepartmentOption, defaultBatchOption);
+    setResetTrigger(false); // Reset the trigger
+  }
+}, [resetTrigger, fetchData, defaultCollegeOption, defaultDepartmentOption, defaultBatchOption]);
+
+
+useEffect(() => {
+  if (reloadSelects) {
+    setReloadSelects(false);
+  }
+}, [reloadSelects]);
 
   // ... (other code)
 
@@ -47,6 +78,7 @@ function SelectFilters({
         <div className={`${Styles.filterinputs} flexStart`}>
           {/* College Select */}
           <Select
+           key={reloadSelects ? "collegeReload" : "college"}
             defaultValue={clg_name}
             onChange={(selectedOption) => handleInputChange(selectedOption, 1)}
             options={[defaultCollegeOption, ...collegeOptions]}
@@ -80,6 +112,7 @@ function SelectFilters({
 
           {/* Department Select */}
           <Select
+           key={reloadSelects ? "departmentReload" : "department"}
             defaultValue={dep_name}
             onChange={(selectedOption) => handleInputChange(selectedOption, 2)}
             options={[defaultDepartmentOption, ...departmentOptions]}
@@ -113,6 +146,7 @@ function SelectFilters({
 
           {/* Batch Select */}
           <Select
+           key={reloadSelects ? "batchReload" : "batch"}
             defaultValue={batch}
             onChange={(selectedOption) => handleInputChange(selectedOption, 3)}
             options={[defaultBatchOption, ...batchOptions]}

@@ -33,10 +33,10 @@ function PublicRoutes() {
     },
   ];
   return (
-    <div className="flexStart innerWidth">
+    <div className="flexStart innerWidth background">
       <BrowserRouter>
         <Sidebar obj={obj} className={Styles.Sidebar} />
-        <div className="fullwidth innerWidth">
+        <div className={`${Styles.Dahsboard} innerWidth`}>
           <Routes>
             <Route index element={<Home />} />
             <Route path="/leaderboard/*" element={<LeaderBoardRotes />}/>

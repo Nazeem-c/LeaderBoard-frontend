@@ -22,7 +22,7 @@ const Sidebar = ({ obj }) => {
             <img src="Assets/Logo.svg" alt="logo" />
           </div>
           <div className={Styles.menuColumns}>
-            <div className={`${Styles.menulist} innerWidth flexColStart`}>
+            <div className={`${Styles.menulist} flexColStart`}>
               {obj.map((item, index) => (
                 <Link to={`/${item.link}`} key={index}>
                   <div
@@ -43,37 +43,6 @@ const Sidebar = ({ obj }) => {
                   </div>
                 </Link>
               ))}
-
-              {/* <Link to="/">
-                <div className={`${Styles.item} button`}>
-                  <div className={Styles.menuImahe}>
-                    {item.icon && React.createElement(item.icon)}
-                  </div>
-                  <div>
-                    <h1 className={Styles.menutext}>Home</h1>
-                  </div>
-                </div>
-              </Link>
-              <Link to="/leaderboard">
-                <div className={`${Styles.item} button`}>
-                  <div className={Styles.menuImahe}>
-                    <FaList className={Styles.icon} />
-                  </div>
-                  <div>
-                    <h1 className={Styles.menutext}>Leaderboard</h1>
-                  </div>
-                </div>
-              </Link>
-              <Link to="/login">
-                <div className={`${Styles.item} button`}>
-                  <div className={Styles.menuImahe}>
-                    <FaSignInAlt className={Styles.icon} />
-                  </div>
-                  <div>
-                    <h1 className={Styles.menutext}>Login</h1>
-                  </div>
-                </div>
-              </Link> */}
             </div>
           </div>
         </div>

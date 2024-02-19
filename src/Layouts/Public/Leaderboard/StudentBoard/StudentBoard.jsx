@@ -119,13 +119,18 @@ function StudentBoard() {
 
   //--------------------------------------------------------
   const fetchData = async () => {
-    try {
+    try {console.log(clg_name);
+      console.log(dep_name);
+      console.log(batch);
       const params = {
         clg_name: encodeURIComponent(clg_name),
         dep_name: encodeURIComponent(dep_name),
         batch: batch,
+        
       };
 
+      
+     
       const response = await getLeaderboardStudent(params);
 
       if (response.statusCode === 404) {
@@ -138,7 +143,7 @@ function StudentBoard() {
         response.responseData &&
         response.responseData.leaderboard
       ) {
-        console.log(clg_name);
+        
         setLeaderboardData(response.responseData.leaderboard);
         // Clear the error when the data is successfully loaded
         setError(null);
@@ -166,7 +171,6 @@ function StudentBoard() {
 
   const handleInputChange = (selectedOption, inputNumber) => {
     const value = selectedOption ? selectedOption.label : "null"; // use label instead of value
-
      const defaultLabels = ["Select College", "Select Department", "Select Batch"];
 
     // If the selected label is one of the default labels, set the value to null
