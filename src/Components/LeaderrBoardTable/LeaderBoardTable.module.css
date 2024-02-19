@@ -103,7 +103,10 @@
     z-index: 3;
 }
 
-  .button:hover,
+.button:hover{
+  background-color:  #ebebeb;
+}
+
   .arrow:hover {
     background-color:  #ffffff;
   }

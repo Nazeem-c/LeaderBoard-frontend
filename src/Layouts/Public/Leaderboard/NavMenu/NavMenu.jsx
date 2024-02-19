@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Styles from "./Navmenu.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function NavMenu() {
-  const [isClickedStudent, setIsClickedStudent] = useState(true);
-  const [isClickedCollege, setIsClickedCollege] = useState(false);
-  const [isClickedDepartment, setIsClickedDepartment] = useState(false);
+  const location = useLocation();
+
+  const [isClickedStudent, setIsClickedStudent] = useState(location.pathname === "/leaderboard");
+  const [isClickedCollege, setIsClickedCollege] = useState(location.pathname === "/leaderboard/college");
+  const [isClickedDepartment, setIsClickedDepartment] = useState(location.pathname === "/leaderboard/department");
 
   const handleLinkClick = (linkType) => {
     switch (linkType) {
@@ -35,7 +37,7 @@ function NavMenu() {
         <div className={`${Styles.menu}`}>
           <div className={`${Styles.menucontainer} flexStart`}>
             <Link to="/leaderboard" onClick={() => handleLinkClick("student")}>
-              <div className={`${isClickedStudent ? Styles.clicked :Styles.menuItem }`}>
+              <div className={`${isClickedStudent ? Styles.clicked : Styles.menuItem}`}>
                 <a>Student</a>
               </div>
             </Link>
@@ -47,7 +49,7 @@ function NavMenu() {
             </Link>
 
             <Link to="/leaderboard/department" onClick={() => handleLinkClick("department")}>
-              <div className={` ${isClickedDepartment ? Styles.clicked : Styles.menuItem2}`}>
+              <div className={`${isClickedDepartment ? Styles.clicked : Styles.menuItem2}`}>
                 <a>Department</a>
               </div>
             </Link>

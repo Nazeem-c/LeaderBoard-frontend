@@ -11,11 +11,18 @@ function Pagination({ totalPages, currentPage, onPageChange }) {
     Math.min(currentPage + 2, totalPages)
   );
 
+  // const handlePageClick = (pageNumber) => {
+  //   const pagesBefore = Math.floor(visiblePages.length / 2);
+  //   const newCurrentPage = Math.max(1, Math.min(totalPages - visiblePages.length + 1, pageNumber - pagesBefore));
+  //   onPageChange(newCurrentPage);
+  // };
+
+
   const handlePageClick = (pageNumber) => {
-    const pagesBefore = Math.floor(visiblePages.length / 2);
-    const newCurrentPage = Math.max(1, Math.min(totalPages - visiblePages.length + 1, pageNumber - pagesBefore));
-    onPageChange(newCurrentPage);
+    // Directly set the clicked page as the new current page
+    onPageChange(pageNumber);
   };
+
 
   return (
     <div className={Styles.pagination}>
