@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-import Styles from "./LeaderBoardTable.module.css";
-import Pagination from "../Pagination/Pagination";
+import Styles from "./CollegeLeaderBoardTable.module.css";
 // import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
+import Pagination from "../Pagination/Pagination";
+import { Style } from "@material-ui/icons";
 
 // function Pagination({ totalPages, currentPage, onPageChange }) {
 //   const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
@@ -57,7 +58,7 @@ import Pagination from "../Pagination/Pagination";
 //   );
 // }
 
-function LeaderBoardTable({ leaderboardData, error }) {
+function CollegeLeaderBoardTable({ leaderboardData, error }) {
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 12;
 
@@ -81,26 +82,26 @@ function LeaderBoardTable({ leaderboardData, error }) {
         <thead className={Styles.tablehead}>
           <tr>
             <th>Ranking</th>
-            <th>Student ID</th>
-            <th>Student Name</th>
-            <th>Total Score</th>
+            <th>College ID</th>
+            <th>College Name</th>
+            <th>Pass Percentage</th>
           </tr>
         </thead>
         <tbody className={Styles.tablebody}>
-          {slicedData.map((student) => (
-            <tr key={student.stud_id}>
-              <td>{student.ranking}</td>
-              <td>{student.stud_id}</td>
-              <td>{student.stud_name}</td>
-              <td>{student.total_marks}</td>
+          {slicedData.map((College) => (
+            <tr key={College.stud_id}>
+              <td>{College.ranking}</td>
+              <td>{College.clg_id}</td>
+              <td>{College.clg_name}</td>
+              <td>{College.pass_percentage}</td>
             </tr>
           ))}
         </tbody>
       </table>
-
-      <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange} />
+            <div className={Style.page}></div>
+      <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange}/>
     </div>
   );
 }
 
-export default LeaderBoardTable;
+export default CollegeLeaderBoardTable;
