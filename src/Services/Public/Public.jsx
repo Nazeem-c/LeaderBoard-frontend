@@ -40,6 +40,27 @@ export const getLeaderboardCollege = async (params) => {
 
 
 
+
+export const getLeaderboardDepartment = async (params) => {
+  
+  try {
+    const response = await axios.get(`${API_URL}/departmentleaderboard`, {
+      params: params,
+    });
+    // console.log('API Response:', response); 
+    // console.log('content', response.data); 
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching leaderboard data:', error);
+    throw error;
+  }
+};
+
+
+
+
+
+
 export const getCollege = async () => {
   
   try {

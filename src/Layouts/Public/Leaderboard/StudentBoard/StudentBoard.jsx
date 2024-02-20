@@ -8,8 +8,8 @@ import {
   getBatches,
 } from "../../../../Services/Public/Public";
 
-import SelectFilters from "../../../../Components/SelectFilters/SelectFilters";
-import LeaderBoardTable from "../../../../Components/LeaderrBoardTable/LeaderBoardTable";
+import SelectFilters from "../../../../Components/Selectors/SelectFilters/SelectFilters";
+import LeaderBoardTable from "../../../../Components/Tables/LeaderrBoardTable/LeaderBoardTable";
 
 function StudentBoard() {
   const [error, setError] = useState(null);

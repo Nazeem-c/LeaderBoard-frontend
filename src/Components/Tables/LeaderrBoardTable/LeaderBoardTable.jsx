@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Styles from "./LeaderBoardTable.module.css";
-import Pagination from "../Pagination/Pagination";
+import Pagination from "../../Pagination/Pagination";
 // import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 

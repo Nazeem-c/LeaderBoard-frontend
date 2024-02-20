@@ -8,8 +8,8 @@ import {
   getBatches,
 } from "../../../../Services/Public/Public";
 
-import SelectFiltersCollege from "../../../../Components/SelectFilterCollege/SelectFIltersCollege";
-import CollegeLeaderBoardTable from "../../../../Components/CollegeLeaderBoardTable/CollegeLeaderBoardTable";
+import SelectFiltersCollege from "../../../../Components/Selectors/SelectFilterCollege/SelectFIltersCollege";
+import CollegeLeaderBoardTable from "../../../../Components/Tables/CollegeLeaderBoardTable/CollegeLeaderBoardTable";
 
 function StudentBoard() {
   const [error, setError] = useState(null);

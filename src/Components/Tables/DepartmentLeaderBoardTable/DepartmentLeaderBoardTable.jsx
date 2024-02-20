@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import Styles from "./CollegeLeaderBoardTable.module.css";
+import Styles from "./DepartmentLeaderBoardTable.module.css";
 // import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-import Pagination from "../Pagination/Pagination";
+import Pagination from "../../Pagination/Pagination";
 import { Style } from "@material-ui/icons";
 
 // function Pagination({ totalPages, currentPage, onPageChange }) {
@@ -58,7 +58,7 @@ import { Style } from "@material-ui/icons";
 //   );
 // }
 
-function CollegeLeaderBoardTable({ leaderboardData, error }) {
+function DepartmentLeaderBoardTable({ leaderboardData, error }) {
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 12;
 
@@ -82,20 +82,20 @@ function CollegeLeaderBoardTable({ leaderboardData, error }) {
         <thead className={Styles.tablehead}>
           <tr>
             <th>Ranking</th>
-            <th>College ID</th>
-            <th>College Name</th>
+            <th>DepartmentID</th>
+            <th>Department Name</th>
             <th>Pass Percentage</th>
           </tr>
         </thead>
         <tbody className={Styles.tablebody}>
-          {slicedData.map((College) => (
-            <tr key={College.stud_id}>
-              <td>{College.ranking}</td>
-              <td>{College.clg_id}</td>
-              <td>{College.clg_name}</td>
-              <td>{College.pass_percentage}</td>
+          {slicedData.map((Department => (
+            <tr key={Department.dep_id}>
+              <td>{Department.ranking}</td>
+              <td>{Department.dep_id}</td>
+              <td>{Department.dep_name}</td>
+              <td>{Department.pass_percentage}</td>
             </tr>
-          ))}
+          )))}
         </tbody>
       </table>
             <div className={Style.page}></div>
@@ -104,4 +104,4 @@ function CollegeLeaderBoardTable({ leaderboardData, error }) {
   );
 }
 
-export default CollegeLeaderBoardTable;
+export default DepartmentLeaderBoardTable;

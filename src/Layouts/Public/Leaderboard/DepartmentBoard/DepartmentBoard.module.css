@@ -1,0 +1,125 @@
+/* 
+.wrapper{
+    position: fixed;
+    top: 40px;
+    background-color: #F8F8F8;
+    height: 100vh;
+} */
+
+.container{
+    gap: 1rem;
+ 
+}
+
+.filterbutton{
+    width: 70px;
+}
+
+.button{
+    font-weight: 500;
+    padding: 1rem 2rem;
+    color: #ffffff;
+    background: #9747FF;
+    border: none;
+    border-radius: 2px;
+    transition: all 300ms ease-in;
+  }
+  
+.wrapper{
+  /* position: fixed;
+  top: 70px;
+  width: 100%;
+  background-color: #F8F8F8; */
+  padding-left: 3.5rem;
+  padding-top: 2.5rem;
+  height: 100vh;
+}
+
+.container{
+  gap: 1rem;
+
+}
+
+.headerbar{
+gap: 2px;
+}
+
+.header{
+color: var(--Gray-1, #000000);
+font-family: "Plus Jakarta Sans";
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 100%; /* 36px */
+/* letter-spacing: 0.60px; */
+}
+
+.subtitle{
+color: var(--Gray-1, #6d6c6c);
+font-family: "Plus Jakarta Sans";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 21px */
+letter-spacing: 0.2px;
+}
+/*------------------------------------------------*/
+
+.Error{
+width: 100%;
+font-weight: 500;
+color: rgb(255, 0, 0);
+}
+.Opps{
+
+width: 500px;
+height: 100vh;
+color: aqua;
+}
+  .button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    
+  }
+  
+  .inputField {
+    height: 52px;
+    width: 430px;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #e2e2e2;
+    border-right: 0.5px solid #e2e2e2;
+    border-left: 0.5px solid #e2e2e2;
+    color: #000; 
+    /* background-color: #f0f0f0; */
+    font-weight: normal;
+    transition: border-bottom-color 0.3s, color 0.3s, font-weight 0.3s;
+  }
+  
+  .inputField:focus {
+    border-bottom-color: #9747FF;
+    color: #9747FF; 
+    font-weight: bold;
+    outline: none;
+  }
+  
+  
+  .customTable {
+    width: 1383px; /* Maximum width */
+    border-collapse: collapse; /* Remove default cell spacing */
+  }
+  
+  .tablehead th, .tablebody td {
+    border: 1px solid #ddd; /* Border for each cell */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .tablehead th {
+    background-color: #f2f2f2; /* Background color for header cells */
+  }
+
+
+  .maintable{
+    width: 100%;
+  }
