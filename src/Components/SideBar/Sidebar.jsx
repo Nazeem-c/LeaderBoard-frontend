@@ -11,8 +11,8 @@ const Sidebar = ({ obj }) => {
 
   // Define a function to determine if the link is active
   const isActive = (path) => {
-    // Check if the current path is exactly the provided path
-    return location.pathname.startsWith(path);
+    // Check if the current path is exactly the provided path or starts with the path followed by a '/'
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
   };
   
 
