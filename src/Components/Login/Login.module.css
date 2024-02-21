@@ -1,0 +1,149 @@
+/* styles.css */
+.container{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.Banner{
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    border-radius: 10px 0 0 10px;
+    border: 1px solid rgba(205, 198, 219, 0.20);
+    box-shadow: 3px 3px 16px 0px rgba(0, 0, 0, 0.04);
+
+
+
+}
+.imagepad{
+    padding: 20px;
+}
+.logcontainer{
+    gap: 40px;
+    
+}
+
+.leftBanner{
+    border-radius: 10px 0 0 10px;
+    height: 600px;
+    background-color:var(--secondary);
+    width: 500px;
+    max-width: 400px;
+    
+  /* padding: 20px; */
+  
+  
+}.img{
+    height: 400px;
+}
+/* Container styles */
+.Login {
+    border-radius: 0 10px 10px 0;
+    width: 436px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 600px;
+    padding: 50px;
+    background-color: #ffffff;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  /* Header styles */
+  .maintext{
+    text-align: center;
+    color: #333;
+  }
+  .Heading{
+    gap: 20px;
+    padding-top: 20px;
+    overflow: hidden; 
+  }
+  .innertext{
+    gap: -8px;
+  }
+  span {
+    line-height: 1; /* Set a smaller value, like 1 or 1em */
+    font-size: 14px;
+  }
+ 
+  .seconddivision{
+    gap: 40px;
+  }
+  /* Form styles */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .main{
+    color: white;
+    font-size: 24px;
+  }
+  /* Label styles */
+  label {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  img{
+    overflow: hidden; 
+  }
+  
+  /* Input styles */
+  input {
+    height: 40px;
+    width: 120%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 7px;
+  }
+  
+  /* Add this CSS to your stylesheet */
+  input:focus {
+    outline: none;
+    border-color: var(--secondary); /* Change the border color on focus */
+    /* box-shadow: 0 0 5px rgba(167, 76, 175, 0.5); Add a subtle box shadow on focus */
+  }
+  
+  .buttonstyles{
+    width: 120%;
+    font-weight: 500;
+    padding: .6rem 1.4rem;
+    color:var(--secondary);
+   
+    border: none;
+    border-radius: 4px;
+
+  }
+  .buttonstyles:hover{
+    background-color: #9747FF;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+    
+  }
+  /* Button styles */
+  /* button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+   */
+  /* Button hover effect
+  button:hover {
+    background-color: #45a049;
+  } */
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    div {
+      max-width: 100%;
+      padding: 10px;
+    }
+  }
+  

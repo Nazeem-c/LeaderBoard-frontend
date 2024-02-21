@@ -19,7 +19,7 @@ function PublicRoutes() {
     {
       icon: FaHome,
       name: "Home",
-      link: "",
+      link: "home",
     },
     {
       icon: FaList,
@@ -38,7 +38,7 @@ function PublicRoutes() {
         <Sidebar obj={obj} className={Styles.Sidebar} />
         <div className={`${Styles.Dahsboard} innerWidth`}>
           <Routes>
-            <Route index element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/leaderboard/*" element={<LeaderBoardRotes />}/>
               {/* <Route path="/leaderboard/student" element={<StudentBoard />} />
               <Route path="/leaderboard/college" element={<CollegeBoard />} />

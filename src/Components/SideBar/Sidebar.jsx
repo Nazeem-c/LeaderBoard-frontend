@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 import Styles from "./Sidebar.module.css";
 // import { FaHome, FaList, FaSignInAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 
 const Sidebar = ({ obj }) => {
   const [activeTab, setActiveTab] = useState("home");
+  const location = useLocation();
+
+  // Define a function to determine if the link is active
+  const isActive = (path) => {
+    // Check if the current path is exactly the provided path
+    return location.pathname.startsWith(path);
+  };
   
 
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-    console.log("pressed");
-  };
+  // const handleTabClick = (tab) => {
+  //   setActiveTab(tab);
+  //   console.log("pressed");
+  // };
 
   return (
     <div className={Styles.Sidebar}>
@@ -26,12 +33,13 @@ const Sidebar = ({ obj }) => {
               {obj.map((item, index) => (
                 <Link to={`/${item.link}`} key={index}>
                   <div
-                    onClick={() => handleTabClick(item.name.toLowerCase())}
-                    className={`${Styles.item} ${
-                      activeTab === item.name.toLowerCase()
-                        ? "active-button"
-                        : "button"
-                    } `}
+                    // onClick={() => handleTabClick(item.name.toLowerCase())}
+                    // className={`${Styles.item} ${
+                    //   activeTab === item.name.toLowerCase()
+                    //     ? "active-button"
+                    //     : "button"
+                    // } `}
+                    className={`${Styles.item} ${isActive(`/${item.link}`) ? 'active-button' : 'button'}`}
                   >
                     <div className={Styles.menuImahe}>
                       {item.icon &&
