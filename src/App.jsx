@@ -1,19 +1,22 @@
 import "./App.css";
-import PublicRoutes from "./LayoutRoots/PublicRoutes";
-
+import PublicRoutes from "./LayoutRoots/Public/PublicRoutes";
+import StudentRoutes from "./LayoutRoots/Student/StudentRoutes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
+import RoutesLayout from "./Routeslayout";
 
 function App() {
   return (
     <div className="App innerWIdth ">
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-          <Route index element={<PublicRoutes />} />
-        </Routes>
-      </BrowserRouter> */}
-      <PublicRoutes />
+        <Route exact path="/students/:studentId/*" element={<StudentRoutes />} />    
+          <Route exact path="/*" element={<PublicRoutes />} />
+     </Routes>
+      </BrowserRouter>
+      {/* <PublicRoutes /> */}
+      {/* <StudentRoutes/> */}
+      {/* <RoutesLayout/> */}
     </div>
   );
 }

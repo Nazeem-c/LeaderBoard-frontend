@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import Styles from "./Sidebar.module.css";
+import Styles from "./SideBarStudent.module.css";
 // import { FaHome, FaList, FaSignInAlt } from "react-icons/fa";
 import { Link, useLocation} from "react-router-dom";
-import { FaList, FaUser, FaSignOutAlt } from "react-icons/fa";
-import { BrowserRouter, Routes, Route ,useParams} from "react-router-dom";
 
 
 
-const Sidebar = ({ obj }) => {
-
-  const { studentId } = useParams();
-  
+const SidebarStudent = ({ obj }) => {
   // const [activeTab, setActiveTab] = useState("home");
   const location = useLocation();
 
@@ -68,4 +63,4 @@ const Sidebar = ({ obj }) => {
   );
 };
 
-export default Sidebar;
+export default SidebarStudent;

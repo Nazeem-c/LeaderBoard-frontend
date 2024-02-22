@@ -11,7 +11,7 @@ import {
 import SelectFiltersCollege from "../../../../Components/Selectors/SelectFilterCollege/SelectFIltersCollege";
 import CollegeLeaderBoardTable from "../../../../Components/Tables/CollegeLeaderBoardTable/CollegeLeaderBoardTable";
 
-function StudentBoard() {
+function CollegeBoard() {
   const [error, setError] = useState(null);
   const [leaderboardData, setLeaderboardData] = useState(null);
   const [departmentOptions, setDepartmentOptions] = useState([]);
@@ -186,4 +186,4 @@ function StudentBoard() {
   );
 }
 
-export default StudentBoard;
+export default CollegeBoard;

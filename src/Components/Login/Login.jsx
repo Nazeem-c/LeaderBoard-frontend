@@ -38,7 +38,7 @@ const LoginForm = () => {
         if (roll === "student") {
           // Check if the entered username matches the authenticated student's username
           if (formData.username === username) {
-            endpoint = `/${username}`;
+            endpoint = `/students/${username}`;
           } else {
             console.error("Unauthorized access. Invalid username.");
             // Handle unauthorized access
