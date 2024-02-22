@@ -10,12 +10,15 @@ const SidebarStudent = ({ obj }) => {
   const location = useLocation();
 
   // Define a function to determine if the link is active
+ 
   const isActive = (path) => {
-    // Check if the current path is exactly the provided path or starts with the path followed by a '/'
-    return location.pathname === path || location.pathname.startsWith(`${path}/`);
+    const currentPath = location.pathname;
+    console.log("Current Path:", currentPath);
+    console.log("Checking Path:", `${path}`);
+    console.log("Comparison Result:", currentPath === `${path}` || currentPath.startsWith(`/${path}/`));
+    return currentPath === `${path}` || currentPath.startsWith(`/${path}/`);
   };
   
-
   // const handleTabClick = (tab) => {
   //   setActiveTab(tab);
   //   console.log("pressed");
