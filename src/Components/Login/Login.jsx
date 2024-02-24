@@ -9,11 +9,18 @@ const LoginForm = () => {
     password: "",
   });
 
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+  const setSessionData = (roll, user_id, username) => {
+    // Use localStorage to store session data
+    sessionStorage.setItem("roll", roll);
+    sessionStorage.setItem("user_id", user_id);
+    sessionStorage.setItem("username", username);
   };
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -21,16 +28,17 @@ const LoginForm = () => {
     try {
       const response = await axios.post(
         "http://127.0.0.1:5001/api/v1/login",
-        formData
+        formData, 
       );
 
       if (response.data.errorMessage) {
-        console.error(response.data.errorMessage);
+        console.error(response.data.responseData.error);
+        setError(response.data.responseData.error);
         // Handle authentication error
       } else {
         const { roll, user_id, username } = response.data.responseData;
-
-        document.cookie = `sessionToken=${user_id}; path=/`;
+        setSessionData(roll, user_id, username);
+        // document.cookie = `sessionToken=${username}; path=/`;
 
         // Generate the endpoint dynamically based on the user's role and username
         let endpoint;
@@ -108,7 +116,12 @@ const LoginForm = () => {
                 <button className={`${Styles.buttonstyles}`} type="submit">
                   Login
                 </button>
+                <br />
+                {error &&  <div>
+          <p className={`${Styles.Error}`}>{error}</p>
+          </div>}
               </form>
+              
             </div>
           </div>
         </div>

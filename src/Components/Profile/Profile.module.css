@@ -3,33 +3,51 @@
     position: absolute;
     top: 5%;
     /* width: 00px; */
-    gap: 230px;
+    gap: 212px;
 
 }
+/* .container{
 
+    margin-bottom: 1.5rem;
+} */
 
 .wrapper{
-    justify-content: center;
+    /* justify-content: center; */
     /* gap: 20px; */
+    height: auto;
+    position: absolute;
     
 }
 .primary{
-    color: rgba(255, 255, 255, 0.75);
+    color: rgb(255, 255, 255);
 text-align: center;
 font-family: Poppins;
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+letter-spacing: -0.5PX;
 }
 .secondary{
-    color: var(--Primary, #FFF);
+    color: var(--Primary, #f8aa00);
+text-align: center;
+font-family: Poppins;
+font-size: 30px;
+font-style: normal;
+font-weight: 500;
+letter-spacing: -1px;
+line-height: 40px;
+}
+
+.secondar{
+    color: var(--Primary, #ffffff);
 text-align: center;
 font-family: Poppins;
 font-size: 32px;
 font-style: normal;
 font-weight: 600;
-line-height: normal;
+letter-spacing: -1px;
+line-height: 30px;
 }
 .img{
   
@@ -41,7 +59,7 @@ line-height: normal;
     gap: 50px;
 }
 .tert{
-    color: rgba(255, 255, 255, 0.75);
+    color: rgb(255, 255, 255);
 text-align: center;
 font-family: Poppins;
 font-size: 16px;
@@ -77,11 +95,46 @@ justify-content: center;
     gap: 20px;
     /* width: 50; */
 }
+
+.scoreheading{z-index: 5;
+    position: absolute;
+    top: 10px;
+    padding: 0.5rem;
+    color: #111111;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    letter-spacing: -1px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 22px;
+    /* border-bottom: solid 2px #925FE2; */
+}
+
+.scoreboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 0px;
+}
 .score{
     position: absolute;
     /* top: 30%; */
 }
 .textcontent{
+    color: #f8aa00;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+}
+
+.textcontent3{
     color: #ffffff;
     text-align: center;
     font-family: Poppins;
@@ -89,6 +142,17 @@ justify-content: center;
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
+    letter-spacing: -0.5px;
+}
+.textcontent4{
+    color: #ffffff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 22px;
+    letter-spacing: 0px;
 }
 .headtext{
     color: #ffffff;
@@ -100,13 +164,14 @@ font-weight: 600;
 line-height: normal;
 }
 .subtext{
-    color: rgba(255, 255, 255, 0.5);
+    color: #f8aa00;
 text-align: center;
 font-family: Poppins;
-font-size: 12px;
+font-size: 14px;
 font-style: normal;
-font-weight: 400;
-line-height: 3px;
+font-weight: 900;
+line-height: 5px;
+letter-spacing: -0.5px;
 }
 .details{
     width: 100%;
@@ -152,10 +217,12 @@ line-height: normal;
 
 .customTable{
     position: absolute;
-    width: 1355px;
+    top: 120px;
+    width: 1388px;
     border-radius: 60px;
     /* margin-right: 20px; */
     border-collapse: collapse;/* Remove default cell spacing */
+    
   }
   
   .tablehead th, .tablebody td {
@@ -193,7 +260,6 @@ line-height: normal;
 }
   
   .tablebody td:first-child,
-  .tablebody td:nth-child(2),
   .tablebody td:last-child {
     width: 180px; /* Adjust the width as needed */
     /* Add any additional styles you want for these columns */
@@ -202,7 +268,31 @@ line-height: normal;
   .tablebody td:first-child{
     font-weight: 800;
   }
+
+  .tablehead th:first-child,
+  .tablehead th:last-child {
+    width: 280px; /* Adjust the width as needed */
+    /* background-color: #242424; */
+    /* Add any additional styles you want for these columns */
+    
+  }
+  /* .tablehead td:first-child{
+    font-weight: 800;
+  } */
+ 
+  .tablebody2 .sgpa{
+    text-align: center;
+    width: 80%;
+    padding: 13px;
+    font-size: 16px;
+    font-weight: 800;
+    color:white;
+    border-bottom: 1px solid var(--secondary);
+    background:var(--secondary);
+    letter-spacing: -0.5px;
+  }
   
+
 
   /* .pagination{
  
@@ -216,4 +306,125 @@ line-height: normal;
     
   }
 
+
+
+
+
+
+
+
+
+  .Error{
+    /* position: absolute; */
+    top: 10%;
+    width: 100%;
+    font-weight: 500;
+    color: rgb(255, 0, 0);
+  }
+
+
+
+
+
+
+
+  .filterbutton{
+    width: 70px;
+    gap: 5px;
+}
+.filterinputs{
+  gap: 1px;
+}
+.filters{
+    gap: 5px;
+}
+
+.button{
+    font-weight: 500;
+    padding: 1rem 2rem;
+    color: #ffffff;
+    background: #9747FF;
+    border: none;
+    border-radius: 2px;
+    transition: all 300ms ease-in;
+  }
+  
+  .button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    
+  }
+  
+  .selectField{
+    height: 52px;
+    width: 430px;
+    text-align: center;
+    border: none;
+    /* border-bottom: 2px solid #e2e2e2;
+    border-right: 0.5px solid #e2e2e2;
+    border-left: 0.5px solid #e2e2e2; */
+    color: #9747FF; 
+    /* background-color: #f0f0f0; */
+    font-weight: normal;
+    transition: border-bottom-color 0.3s, color 0.3s, font-weight 0.3s;
+  }
+
+
+
+/* Your existing styles... */
+
+/* Sample styles for the Select component */
+.Select {
+    width: 100%; /* Adjust the width as needed */
+  }
+  
+  .selectField {
+    font-size: 16px; /* Adjust the font size */
+    /* border: 1px solid #ccc;  */
+    /* height: 52px; */
+    /* border: 2px solid violet;  */
+    /* height: 60px; */
+    width: 389px;
+    border-radius: 5px; /* Border radius */
+    /* padding: 10px;  */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Style for the dropdown menu */
+  .Select__menu {
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  }
+  
+  /* Style for each option in the dropdown menu */
+  .Select__option {
+  
+    
+    padding: 10px; /* Padding inside each option */
+  }
+  
+  /* Style for the selected option */
+  .Select__single-value {
+    
+    color: #303030; /* Text color for the selected option */
+  }
+  
+  /* Style for the placeholder text */
+  .Select__placeholder {
+    
+    color: #999; /* Placeholder text color */
+  }
+  
+  /* Style for the arrow icon */
+  .Select__indicator {
+    color: #333; /* Color of the arrow icon */
+  }
+  
+  /* Style for the arrow icon when the dropdown is open */
+  .Select__indicator--is-open {
+    transform: rotate(180deg); /* Rotate the arrow when the dropdown is open */
+  }
+  
+  /* Your existing styles... */
   

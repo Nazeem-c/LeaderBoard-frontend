@@ -1,15 +1,18 @@
 .dashboard{
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
+    height: 100%;
     left: 14%;
     z-index: -1;
     background-color: #F8F8F8;
     /* margin-right: 100px; */
-    margin-right: 100px; 
+    /* margin-right: 100px;  */
 
 }
 
 .Sidebar{
+    position: fixed;
+    top: 0px;
     width: 100px;
     z-index: 0;
     border-right: 1px solid var(--Stroke, #E8E8E8);
@@ -18,11 +21,11 @@
     height: 100%;
 }
 
-@media (max-width: 800px){
+/* @media (max-width: 800px){
     .dashboard{
         display: flex;
         justify-content: center;
         align-items: center;
         margin-right: 0px; 
     }
-}
+} */
