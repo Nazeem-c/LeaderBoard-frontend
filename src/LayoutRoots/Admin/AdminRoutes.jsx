@@ -31,7 +31,7 @@ function AdminRoutes() {
       <Routes>
         <Route path="/" element={<Dashboard/>} />
         {/* <Route path="leaderboard/*" element={<LeaderBoardRotes />} /> */}
-        <Route path="logout" element={<Profile />}/>
+        <Route path="logout" element={<Dashboard />}/>
       </Routes>
     </div>
     {/* </BrowserRouter> */}
