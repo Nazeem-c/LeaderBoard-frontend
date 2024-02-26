@@ -4,9 +4,10 @@ import Styles from "./Dashboard.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Dashboard() {
+  
   //-----------------------------logout------------------------
   const adminId = sessionStorage.getItem("username");
-  console.log(adminId)
+  console.log(adminId);
   const location = useLocation();
   const navigate = useNavigate();
   //   const [showLogoutModal, setShowLogoutModal] = useState(false);
@@ -25,24 +26,35 @@ function Dashboard() {
     }
   }, [location.pathname, navigate, adminId]);
 
-
   useEffect(() => {
     // Check if adminId is not present (user is not authenticated)
     if (!adminId) {
       // Redirect to the home page
-      navigate('/login');
+      navigate("/login");
     }
   }, [adminId, navigate]);
   return (
-    
     <div className={Styles.Dashboard}>
-      {adminId ? <div className={Styles.container}>
-        <div className={`${Styles.wrapper} flexColStart paddings`}>
-          <div className={Styles.topbanner}>
-            <h4>Welcome to the admin Portal</h4>
+      {adminId ? (
+        <div className={Styles.container}>
+          <div className={`${Styles.wrapper} flexColStart paddings`}>
+            <div className={Styles.topbanner}>
+              <h4>Welcome to the admin Portal</h4>
+            </div>
+            <br />
+            <div className={`${Styles.student} flexColStart`}>
+              <h4>Mailing Score Card</h4>
+              <div className={`${Styles.inputs} flexStart`}>
+                <input type="text" />
+                <input type="text" />
+              </div>
+
+            </div>
           </div>
         </div>
-      </div> : navigate('/')}
+      ) : (
+        navigate("/")
+      )}
     </div>
   );
 }
