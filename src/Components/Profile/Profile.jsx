@@ -7,6 +7,10 @@ import {
 } from "../../Services/student/student";
 
 import Select from "react-select";
+
+import { useLocation, useNavigate } from 'react-router-dom';
+
+
 const Profile = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [studentData, setStudentData] = useState(null);
@@ -15,6 +19,30 @@ const Profile = () => {
   const [marks, setMarks] = useState(null);
   const [sgpa, setSgpa] = useState(null);
   const [error, setError] = useState(null);
+
+//-----------------------------logout------------------------
+const studentId = sessionStorage.getItem('username');
+  const location = useLocation();
+  const navigate = useNavigate();
+//   const [showLogoutModal, setShowLogoutModal] = useState(false);
+useEffect(() => {
+    // Check if the URL contains '/logout'
+    if (location.pathname.includes('/logout')) {
+      // If yes, show a browser-level notification
+      const isConfirmed = window.confirm('Are you sure you want to logout?');
+  
+      if (isConfirmed) {
+       
+        sessionStorage.clear();
+        navigate('/');
+      } else {
+        
+        navigate(`/students/${studentId}`); // Use backticks (`) for template literals
+      }
+    }
+  }, [location.pathname, navigate, studentId]);
+  
+//=------------------------
 
   const handleSemesterChange = (selectedOption) => {
     const selectedValue = selectedOption.value;
@@ -105,7 +133,7 @@ const Profile = () => {
 
   return (
     <div className={styles.container}>
-      <div className={`${styles.warpper} flexColStart paddings innerWidth`}>
+        {studentId ?  <div className={`${styles.warpper} flexColStart paddings innerWidth`}>
         <div className={`${styles.topbanner} flexStart paddings`}>
           <div className={`${styles.left} flexColStart `}>
             <div className={`${styles.top} flexStart`}>
@@ -263,7 +291,8 @@ const Profile = () => {
             </tbody>
           </table> */}
         </div>
-      </div>
+      </div> : navigate('/login')}
+     
     </div>
   );
 };

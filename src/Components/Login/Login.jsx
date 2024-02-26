@@ -42,7 +42,11 @@ const LoginForm = () => {
 
         // Generate the endpoint dynamically based on the user's role and username
         let endpoint;
-
+        if(username !== sessionStorage.getItem("username")){
+          navigate('/');
+          console.log("not access")
+        }
+        
         if (roll === "student") {
           // Check if the entered username matches the authenticated student's username
           if (formData.username === username) {

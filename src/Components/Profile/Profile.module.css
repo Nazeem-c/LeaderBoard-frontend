@@ -1,5 +1,6 @@
 .topbanner{
-    background: linear-gradient(99deg, #925FE2 53.12%, #DFCFF7 155.43%);
+    /* background: linear-gradient(99deg, #925FE2 53.12%, #DFCFF7 155.43%); */
+    background-color: var(--secondary);
     position: absolute;
     top: 5%;
     /* width: 00px; */

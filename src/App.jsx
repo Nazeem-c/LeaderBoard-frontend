@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App innerWIdth ">
+      
       <BrowserRouter>
         <Routes>
         <Route exact path="/students/:studentId/*" element={<StudentRoutes />} />    

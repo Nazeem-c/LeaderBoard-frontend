@@ -5,7 +5,7 @@ import Styles from "./StudentRoutes.module.css";
 import SidebarStudent from "../../Components/SideBarStudent/SideBarStudent";
 import LeaderBoardRotes from "../Public/LeaderBoardRotes";
 import Profile from "../../Components/Profile/Profile";
-import LoginForm from "../../Components/Login/Login";
+import Logout from "../../Components/Logout/Logout";
 
 const StudentRoutes = () => {
   const { studentId } = useParams();
@@ -15,11 +15,11 @@ const StudentRoutes = () => {
       name: "Profile",
       link: `students/${studentId}`,
     },
-    {
-      icon: FaList,
-      name: "Leaderboard",
-      link: `students/${studentId}/leaderboard`,
-    },
+    // {
+    //   icon: FaList,
+    //   name: "Leaderboard",
+    //   link: `students/${studentId}/leaderboard`,
+    // },
     {
       icon: FaSignOutAlt,
       name: "LogOut",
@@ -33,8 +33,8 @@ const StudentRoutes = () => {
       <div className={`${Styles.Dahsboard} innerWidth`}>
         <Routes>
           <Route path="/" element={<Profile />} />
-          <Route path="leaderboard/*" element={<LeaderBoardRotes />} />
-          <Route path="logout" element={<LoginForm />} />
+          {/* <Route path="leaderboard/*" element={<LeaderBoardRotes />} /> */}
+          <Route path="logout" element={<Profile />}/>
         </Routes>
       </div>
       {/* </BrowserRouter> */}
