@@ -57,7 +57,7 @@ const LoginForm = () => {
             return;
           }
         } else if (roll === "admin") {
-          endpoint = `/adminportal/${username}`;
+          endpoint = `/admin/${username}`;
         } else {
           console.error("Invalid user role:", roll);
           // Handle the case where the role is not student or admin
