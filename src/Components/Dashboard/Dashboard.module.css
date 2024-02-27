@@ -110,3 +110,10 @@ font-size: 24px;
   .Select__indicator--is-open {
     transform: rotate(180deg); /* Rotate the arrow when the dropdown is open */
   }
+
+  .Error{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(255, 0, 0);
+  }

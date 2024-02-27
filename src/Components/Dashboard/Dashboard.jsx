@@ -1,10 +1,27 @@
 import React, { useState, useEffect } from "react";
 import Styles from "./Dashboard.module.css";
 import Select from "react-select";
+import { mailing } from "../../Services/Admin/Admin";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Dashboard() {
+
+  const [selectedValue, setSelectedValue] = useState('');
+  const [error, setError] = useState(null);
+  const [stdId,setStdId] = useState();
+  const [sem,setSem] = useState();
+  const [data,setdata] = useState();
+
+  const handlestdidChange = (event)=>{
+    setStdId(event.target.value)
+  }
+  const handlesemChange = (selectedOption) => {
+    setSem(selectedOption.value);
+    
+    // Perform any additional actions on selection change
+  };
+  console.log(sem);
   //-----------------------------logout------------------------
   const adminId = sessionStorage.getItem("username");
   console.log(adminId);
@@ -33,7 +50,42 @@ function Dashboard() {
       navigate("/login");
     }
   }, [adminId, navigate]);
+//--------------------------------------------------------------------------------
 
+const sendMail = async()=>{
+
+  try{
+    const params = {
+      stud_id: stdId,
+      sem_no: sem
+    };
+ const response = await mailing(params);
+
+
+ if (response.statusCode === 404) {
+  setError(response.responseData.error);
+ 
+} else if (
+  response &&
+  response.statusCode === 200 &&
+  response.responseData 
+) {
+  setdata("Email sent successfully!");
+  // Clear the error when the data is successfully loaded
+  setError(null);
+} else {
+  console.error("Invalid API response structure:", response);
+  setdata("Unsuccessfull!");
+  // Set an error if the response structure is unexpected
+  setError("Unexpected API response");
+ 
+}
+
+} catch (error) {
+console.error("Error fetching leaderboard data:", error);
+setError("Error fetching leaderboard data. Please try again.");
+}
+};
   const [selectedSemester, setSelectedSemester] = useState(null);
 
   const semesterOptions = [
@@ -70,6 +122,7 @@ function Dashboard() {
                     type="text"
                     className={`${Styles.inputfield} innerWidth`}
                     placeholder="Student Id"
+                    onChange={handlestdidChange}
                     // value={input1}
                     // onChange={handleInput1Change}
                     
@@ -78,8 +131,8 @@ function Dashboard() {
 
                 <Select
                   className={Styles.selectField}
-                  value={selectedSemester}
-                  onChange={handleSemesterChange}
+                  value={semesterOptions.find(option => option.value === sem)}
+                  onChange={handlesemChange}
                   options={semesterOptions}
                   placeholder="Select Semester"
                   styles={{
@@ -107,14 +160,18 @@ function Dashboard() {
                     }),
                   }}
                 />
-                <button className={`${Styles.mailactionbutton} button`}>
+                <button onClick={() => sendMail()} className={`${Styles.mailactionbutton} button`}>
                   <span>Send Score</span>
                 </button>
               </div>
               <div className={`${Styles.status} flexStart`}>
-                <span>Status : </span>
-                <span> Email sent successfully</span>
+                <span>Status : &nbsp; </span>
+                <span> {data}</span>
               </div>
+              {error && <div className={`${Styles.errorclass}`}>
+          <p className={`${Styles.Error}`}>{error}</p>
+          <div className={`${Styles.Opps}`}></div>
+          </div>}
             </div>
           </div>
         </div>
