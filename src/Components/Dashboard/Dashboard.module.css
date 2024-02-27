@@ -14,3 +14,99 @@ h4{
 
 font-weight: 500;
 }
+.student{
+    gap: 1rem;
+    letter-spacing: -0.7px;
+font-size: 24px;
+}
+
+.inputs{
+    gap: 0.3rem;
+}
+.inputfield{
+    height: 52px;
+    width: 545px;
+    text-align: center;
+    border: none;
+    /* border-bottom: 2px solid #e2e2e2;
+    border-right: 0.5px solid #e2e2e2;
+    border-left: 0.5px solid #e2e2e2; */
+    color: #9747FF; 
+    /* background-color: #f0f0f0; */
+    font-size: 16px;
+    font-weight: normal;
+    transition: border-bottom-color 0.3s, color 0.3s, font-weight 0.3s;
+}
+
+.mailactionbutton{
+    width: 400px;
+    height: 52px;
+}
+
+
+.selectField{
+    height: 52px;
+    /* width: 100%; */
+    text-align: center;
+    border: none;
+    /* border-bottom: 2px solid #e2e2e2;
+    border-right: 0.5px solid #e2e2e2;
+    border-left: 0.5px solid #e2e2e2; */
+    color: #9747FF; 
+    /* background-color: #f0f0f0; */
+    font-weight: normal;
+    transition: border-bottom-color 0.3s, color 0.3s, font-weight 0.3s;
+  }
+
+/* Sample styles for the Select component */
+.Select {
+    width: 100%; /* Adjust the width as needed */
+  }
+  
+  .selectField {
+    font-size: 16px; /* Adjust the font size */
+    /* border: 1px solid #ccc;  */
+    /* height: 52px; */
+    /* border: 2px solid violet;  */
+    /* height: 60px; */
+    width: 389px;
+    border-radius: 5px; /* Border radius */
+    /* padding: 10px;  */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Style for the dropdown menu */
+  .Select__menu {
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  }
+  
+  /* Style for each option in the dropdown menu */
+  .Select__option {
+  
+    
+    padding: 10px; /* Padding inside each option */
+  }
+  
+  /* Style for the selected option */
+  .Select__single-value {
+    
+    color: #303030; /* Text color for the selected option */
+  }
+  
+  /* Style for the placeholder text */
+  .Select__placeholder {
+    
+    color: #999; /* Placeholder text color */
+  }
+  
+  /* Style for the arrow icon */
+  .Select__indicator {
+    color: #333; /* Color of the arrow icon */
+  }
+  
+  /* Style for the arrow icon when the dropdown is open */
+  .Select__indicator--is-open {
+    transform: rotate(180deg); /* Rotate the arrow when the dropdown is open */
+  }

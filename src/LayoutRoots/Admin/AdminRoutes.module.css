@@ -21,6 +21,9 @@
     height: 100%;
 }
 .Admin{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     
 }
 

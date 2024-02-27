@@ -44,6 +44,14 @@ useEffect(() => {
   
 //=------------------------
 
+useEffect(() => {
+  // Check if adminId is not present (user is not authenticated)
+  if (!studentId) {
+    // Redirect to the home page
+    navigate('/login');
+  }
+}, [studentId, navigate]);
+
   const handleSemesterChange = (selectedOption) => {
     const selectedValue = selectedOption.value;
     console.log(selectedValue);

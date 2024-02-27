@@ -96,7 +96,7 @@
     color: rgb(255, 0, 0);
   }
   /* Input styles */
-  input {
+  .inputtext {
     height: 40px;
     width: 120%;
     padding: 8px;
