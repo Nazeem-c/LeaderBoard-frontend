@@ -101,6 +101,7 @@ const LoginForm = () => {
               <form onSubmit={handleFormSubmit}>
                 <label>Username:</label>
                 <input
+                className={Styles.inputtext}
                   placeholder="username"
                   type="text"
                   name="username"
@@ -110,6 +111,8 @@ const LoginForm = () => {
                 {/* <br /> */}
                 <label>Password:</label>
                 <input
+
+className={Styles.inputtext}
                   placeholder="password"
                   type="password"
                   name="password"
