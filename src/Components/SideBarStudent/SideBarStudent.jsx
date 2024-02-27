@@ -30,7 +30,7 @@ const SidebarStudent = ({ obj }) => {
       <div className={Styles.container}>
         <div className={`${Styles.wrapper}`}>
           <div className={`${Styles.logoDesign} flexStart`}>
-            <img src="Assets/Logo.svg" alt="logo" />
+            <img src={process.env.PUBLIC_URL + "/Assets/Logo.svg"} alt="logo" />
           </div>
           <div className={Styles.menuColumns}>
             <div className={`${Styles.menulist} flexColStart`}>
