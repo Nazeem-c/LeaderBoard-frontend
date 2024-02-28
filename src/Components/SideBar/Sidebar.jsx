@@ -21,10 +21,6 @@ const Sidebar = ({ obj }) => {
   };
   
 
-  // const handleTabClick = (tab) => {
-  //   setActiveTab(tab);
-  //   console.log("pressed");
-  // };
 
   return (
     <>

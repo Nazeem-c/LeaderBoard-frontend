@@ -25,10 +25,26 @@
 }
 
 @media (max-width: 768px){
+   
+.Sidebar{
+    width: 100%;
+    z-index: 5;
+    border-right: 1px solid var(--Stroke, #E8E8E8);
+    background: var(--Primary, #ffffff);
+    width: 30%;
+    height: 100%;
+}
+}
+
+@media (max-width: 425px){
     .dashboard{
         display: flex;
         justify-content: center;
         align-items: center;
         margin-right: 0px; 
+    }
+    .Sidebar{
+        display: none;
+        padding: 0;
     }
 }

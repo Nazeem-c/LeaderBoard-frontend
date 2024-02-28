@@ -35,3 +35,9 @@
         margin-right: 0px; 
     }
 } */
+@media (max-width: 425px){
+    .Admin{
+        display: flex;
+        flex-direction: column;
+    }
+}

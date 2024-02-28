@@ -81,7 +81,8 @@
 
 
 
-@media (max-width: 800px){
+@media (max-width: 768px){
+  
     .primaryFOnt1{
         
         font-size: 14px;
@@ -122,7 +123,7 @@
 }
 
 .columns{
-    gap: 90px;
+    gap: 50px;
     align-items: center;
     padding-right: 0px; 
     text-align: center;
@@ -134,4 +135,12 @@
     align-items: center;
     text-align: center;
 }
+
 }
+
+
+
+
+
+
+
