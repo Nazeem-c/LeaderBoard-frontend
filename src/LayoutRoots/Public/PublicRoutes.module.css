@@ -1,24 +1,30 @@
-.dashboard{
+.Dashboard{
     position: fixed;
     width: 100%;
-    left: 14%;
+    /* left: 14%; */
     z-index: -1;
-    background-color: #F8F8F8;
+    background-color:var(--secondbg);
     /* margin-right: 100px; */
     margin-right: 100px; 
 
 }
 
 .Sidebar{
-    width: 100px;
-    z-index: 0;
+    width: 100%;
+    z-index: 5;
     border-right: 1px solid var(--Stroke, #E8E8E8);
     background: var(--Primary, #ffffff);
     width: 30%;
     height: 100%;
 }
+.Admin{
+    display: flex;
+    flex-direction: row;
+    /* align-items: flex-start; */
+    
+}
 
-@media (max-width: 800px){
+@media (max-width: 768px){
     .dashboard{
         display: flex;
         justify-content: center;

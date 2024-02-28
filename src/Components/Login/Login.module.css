@@ -1,7 +1,13 @@
 /* styles.css */
+.wrapper{
+  display: flex;
+  align-items: center;
+}
+
 .container{
     display: flex;
     justify-content: center;
+    align-items: center;
     
     
 }
