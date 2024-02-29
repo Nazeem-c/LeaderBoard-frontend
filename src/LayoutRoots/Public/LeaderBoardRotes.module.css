@@ -1,6 +1,13 @@
 .dashboard{
     position: fixed;
+    padding-top: 5px;
     top: 55px;
     width: 100%;
     background-color: #F8F8F8;
+}
+@media (min-width:426px) and (max-width: 768px){
+
+    .dashboard{
+        padding-top: 35px;
+    }
 }

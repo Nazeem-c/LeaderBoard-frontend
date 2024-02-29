@@ -140,6 +140,9 @@
  
 /* Styles for iPads */
 @media (min-width: 750px) and (max-width: 1024px) {
+    .home{
+        padding-top: 130px;
+    }
     .primaryFOnt1 {
         font-size: 20px; /* Adjust font size for iPad */
     }
@@ -147,7 +150,10 @@
         font-size: 64px; /* Adjust font size for iPad */
     }
     .columns{
-        gap: 40px;
+        gap: 80px;
+    }
+    .wrapper{
+        /* gap: 50%; */
     }
     /* Add more styles as needed */
 }

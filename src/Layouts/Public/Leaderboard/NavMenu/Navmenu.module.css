@@ -74,3 +74,16 @@ transform: scale(1.1);
 cursor: pointer;
 transform: scale(1.1);
 }
+
+
+@media (max-width:1025){
+  .menucontainer{
+  width: 60%;
+  background-color: #9747FF;
+  padding-left: 0px;
+}
+}
+
+@media (max-width: 425px){
+
+}

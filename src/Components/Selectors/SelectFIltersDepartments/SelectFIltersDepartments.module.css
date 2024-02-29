@@ -1,5 +1,5 @@
 .filterbutton{
-    width: 70px;
+    /* width: 70px; */
     gap: 5px;
 }
 .filterinputs{
@@ -103,3 +103,25 @@
   
   /* Your existing styles... */
   
+
+  @media (min-width:426px) and (max-width: 768px){
+
+    .filterinputs{
+      flex-direction: column;
+      gap: 5px;
+    }
+    .filters{
+      flex-direction: column;
+    
+    }
+    .selectField {
+      width: 661px;
+    }
+    .filterbutton{
+      gap: 7px;
+    }
+    .button{
+      padding: 1rem 9.1rem;
+    }
+      }
+    

@@ -176,3 +176,22 @@
         height: 309px;
       }
     }
+
+    
+@media (min-width:426px) and (max-width: 768px) {
+      .Banner{
+        
+       gap: 0;
+       margin-top: 120px;
+      }
+      .leftBanner{
+        height: 300px;
+       border-radius: 0;
+       max-width: 436px;
+      }
+      .Login{
+
+       margin-bottom: 50px;
+      }
+       }
+   
