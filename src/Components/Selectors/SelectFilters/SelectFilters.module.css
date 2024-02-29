@@ -4,6 +4,7 @@
 }
 .filterinputs{
   gap: 1px;
+  
 }
 .filters{
     gap: 5px;
@@ -35,6 +36,7 @@
     width: 430px;
     text-align: center;
     border: none;
+    
     /* border-bottom: 2px solid #e2e2e2;
     border-right: 0.5px solid #e2e2e2;
     border-left: 0.5px solid #e2e2e2; */

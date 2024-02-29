@@ -165,7 +165,7 @@ setError("Error fetching leaderboard data. Please try again.");
                 </button>
               </div>
               <div className={`${Styles.status} flexStart`}>
-                <span>Status : &nbsp; </span>
+                {/* <span>Status : &nbsp; </span> */}
                 <span> {data}</span>
               </div>
               {error && <div className={`${Styles.errorclass}`}>

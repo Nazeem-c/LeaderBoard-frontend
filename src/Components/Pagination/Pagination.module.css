@@ -9,6 +9,7 @@
     position: relative;
   /* top: 84%; */
   left: 30%;
+  
   }
   
   .button,
@@ -23,13 +24,15 @@
     cursor: pointer;
     transition: background-color 0.3s;
     margin-right: 5px;
-    box-shadow: 3px 3px 16px 0px rgba(0, 0, 0, 0.05);
+    /* box-shadow: 3px 3px 16px 0px rgba(0, 0, 0, 0.05); */
     
+    box-shadow: 3px 3px 19px 0px rgba(0, 0, 0, 0.10);
   }
   .button{
     background-color: white;
     height: 50px;
     width: 55px;
+    
   }
   .arrow {
     border: 1px solid #ffffff;

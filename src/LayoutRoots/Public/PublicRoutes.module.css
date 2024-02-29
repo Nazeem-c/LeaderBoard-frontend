@@ -1,11 +1,12 @@
 .Dashboard{
     position: fixed;
-    width: 100%;
+    /* width: 80%; */
     /* left: 14%; */
     z-index: -1;
     background-color:var(--secondbg);
     /* margin-right: 100px; */
     margin-right: 100px; 
+   
 
 }
 
@@ -24,9 +25,9 @@
     
 }
 
-@media (max-width: 768px){
+@media (max-width: 750px){
    
-.Sidebar{
+/* .Sidebar{
     width: 100%;
     z-index: 5;
     border-right: 1px solid var(--Stroke, #E8E8E8);
@@ -34,6 +35,13 @@
     width: 30%;
     height: 100%;
 }
+.Admin{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    
+} */
+
 }
 
 @media (max-width: 425px){
@@ -45,6 +53,5 @@
     }
     .Sidebar{
         display: none;
-        padding: 0;
     }
 }
