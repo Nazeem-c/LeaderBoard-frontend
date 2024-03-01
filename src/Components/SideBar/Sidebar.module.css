@@ -18,6 +18,7 @@ background: var(--Primary, #ffffff);
     flex-direction: column; 
     /* align-items: stretch; */
     height: 100vh;
+    /* padding-bottom: au; */
       
  
 }

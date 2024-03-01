@@ -18,10 +18,17 @@ font-weight: 500;
     gap: 1rem;
     letter-spacing: -0.7px;
 font-size: 24px;
+width: 100%;
 }
 
+.Dashboard{
+  height: 100vh;
+  
+}
 .wrapper{
-  position: relative;
+  /* position: relative; */
+
+  width: 82vw;
 }
 
 .inputs{
@@ -29,7 +36,8 @@ font-size: 24px;
 }
 .inputfield{
     height: 52px;
-    width: 595px;
+    /* width: 595px; */
+    width: 100%;
     text-align: center;
     border: none;
     /* border-bottom: 2px solid #e2e2e2;
@@ -43,10 +51,13 @@ font-size: 24px;
 }
 
 .mailactionbutton{
-    width: 400px;
+    /* width: 400px; */
+    width: 100%;
     height: 52px;
 }
-
+.contain{
+  width: 100%;
+}
 
 .selectField{
     height: 52px;
@@ -73,7 +84,8 @@ font-size: 24px;
     /* height: 52px; */
     /* border: 2px solid violet;  */
     /* height: 60px; */
-    width: 389px;
+    /* width: 389px; */
+    width: 100%;
     border-radius: 5px; /* Border radius */
     /* padding: 10px;  */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
@@ -124,10 +136,14 @@ font-size: 24px;
 
   @media (min-width:426px) and (max-width: 768px){
 
-
+    .contain{
+      width: 100%;
+    }
     .wrapper{
-      top: 50px;
+      /* top: 50px; */
+      margin-top: 50px;
       justify-content: center;
+      width: 100vw;
     }
     .student{
       align-items: center;
@@ -136,8 +152,5 @@ font-size: 24px;
       flex-direction: column;
       justify-content: center;
     }
-    .inputfield{
-
-      width: 400px;
-    }
+   
   }

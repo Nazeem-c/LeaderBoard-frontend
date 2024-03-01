@@ -2,8 +2,10 @@
 
  
 .home{
-    height: 100%;
+    height: 100vh;
+    width: 100%;
     background: #F8F8F8;
+    overflow: scroll;
 }
 .columns{
     gap: 100px;
@@ -15,7 +17,15 @@
     justify-content: center; */
 }
  
- 
+.text{
+    color: var(--Secondary, #9747FF);
+    font-family: "Plus Jakarta Sans";
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 83%;
+    letter-spacing: -1.92px;
+}
  
 .primaryFOnt1{
     color: var(--Secondary, #9747FF);
@@ -146,6 +156,9 @@
     .primaryFOnt1 {
         font-size: 20px; /* Adjust font size for iPad */
     }
+    .text{
+        font-size: 64px;
+    }
     .primaryFOnt2 {
         font-size: 64px; /* Adjust font size for iPad */
     }
@@ -184,7 +197,11 @@
       line-height: 120%; /* Adjust line height */
       letter-spacing: -1px; /* Adjust letter spacing */
     }
-  
+  .text{
+    font-size: 40px; /* Decrease font size */
+      line-height: 120%; /* Adjust line height */
+      letter-spacing: -1px;
+  }
     .primaryFOnt3 {
       font-size: 20px; /* Decrease font size */
       line-height: 130%; /* Adjust line height */

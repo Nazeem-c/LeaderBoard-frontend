@@ -11,7 +11,7 @@ function Home() {
                         <span className={Styles.primaryFOnt1}>Welcome to Stellar University</span>
                     </div>
                     <div className={`${Styles.items} flexColStart`}>
-                        <span className={Styles.primaryFOnt2}>Stellar University</span>
+                        <span className={Styles.primaryFOnt2}><span className={Styles.text}>S</span>tellar University</span>
                         <span className={Styles.primaryFOnt3}>Inspiring Minds, Shaping Futures</span>
                     </div>
                     <div className={Styles.items}>

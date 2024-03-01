@@ -117,7 +117,7 @@ setError("Error fetching leaderboard data. Please try again.");
             <div className={`${Styles.student} flexColStart innerWidth`}>
               <h4>Mailing Score Card</h4>
               <div className={`${Styles.inputs} flexStart innerWidth`}>
-                <div>
+                <div className={Styles.contain}>
                   <input
                     type="text"
                     className={`${Styles.inputfield} innerWidth`}
