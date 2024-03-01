@@ -44,3 +44,12 @@
         display: fixed;
     } */
 }
+
+
+@media (min-width:426px) and (max-width: 768px){
+
+    .Dashboard{
+        padding-top: 80px;
+    }
+    
+}

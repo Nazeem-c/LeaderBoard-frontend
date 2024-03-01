@@ -6,9 +6,9 @@
     align-items: center;
     margin-top: 20px;
 
-    position: relative;
+    /* position: relative; */
   /* top: 84%; */
-  left: 30%;
+  /* left: 30%; */
   
   }
   
@@ -112,3 +112,11 @@
     margin-left: 5px;
   }
   
+  @media (min-width:426px) and (max-width: 768px){
+    .pagination{
+      /* left: 180px; */
+    }
+  }
+
+
+  @media (max-width: 425px){}

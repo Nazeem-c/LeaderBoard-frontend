@@ -20,6 +20,10 @@ font-weight: 500;
 font-size: 24px;
 }
 
+.wrapper{
+  position: relative;
+}
+
 .inputs{
     gap: 0.3rem;
 }
@@ -116,4 +120,24 @@ font-size: 24px;
     font-size: 16px;
     font-weight: 500;
     color: rgb(255, 0, 0);
+  }
+
+  @media (min-width:426px) and (max-width: 768px){
+
+
+    .wrapper{
+      top: 50px;
+      justify-content: center;
+    }
+    .student{
+      align-items: center;
+    }
+    .inputs{
+      flex-direction: column;
+      justify-content: center;
+    }
+    .inputfield{
+
+      width: 400px;
+    }
   }

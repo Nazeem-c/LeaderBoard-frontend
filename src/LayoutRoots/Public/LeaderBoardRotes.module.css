@@ -4,10 +4,13 @@
     top: 55px;
     width: 100%;
     background-color: #F8F8F8;
+    /* overflow: scroll; */
 }
+
 @media (min-width:426px) and (max-width: 768px){
 
     .dashboard{
-        padding-top: 35px;
+        padding-top: 80px;
     }
+    
 }

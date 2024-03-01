@@ -153,7 +153,7 @@ opacity: 50%;
                 line-height: normal;
             }
             .item{
-
+justify-content: center;
                 display: flex;
                 
                 height: 30px;

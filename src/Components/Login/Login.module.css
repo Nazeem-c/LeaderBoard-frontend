@@ -20,6 +20,8 @@
 
 
 }
+
+
 .imagepad{
     padding: 20px;
 }
@@ -32,8 +34,8 @@
     border-radius: 10px 0 0 10px;
     height: 600px;
     background-color:var(--secondary);
-    width: 500px;
-    max-width: 400px;
+    width: 400px;
+    /* max-width: 400px; */
     
   /* padding: 20px; */
   
@@ -185,12 +187,13 @@
        margin-top: 120px;
       }
       .leftBanner{
+        width: 500px;
         height: 300px;
        border-radius: 0;
        max-width: 436px;
       }
       .Login{
-
+height: 550px;
        margin-bottom: 50px;
       }
        }
