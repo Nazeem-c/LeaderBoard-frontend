@@ -30,7 +30,7 @@ const StudentRoutes = () => {
     <div className="flexStart innerWidth background">
       {/* <BrowserRouter> */}
       <SidebarStudent obj={obj} className={Styles.Sidebar} />
-      <div className={`${Styles.Dahsboard} innerWidth`}>
+      <div className={`${Styles.Dahsboard} innerWidth flexColStart`}>
         <Routes>
           <Route path="/" element={<Profile />} />
           {/* <Route path="leaderboard/*" element={<LeaderBoardRotes />} /> */}
