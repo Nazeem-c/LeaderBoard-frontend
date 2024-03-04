@@ -115,12 +115,14 @@ br {
   border: none;
   border-radius: 4px;
   /* transition: all 300ms ease-in; */
+  
 }
 
 .button:hover{
   color: var(--secondary);
   cursor: pointer;
   transform: scale(1.1);
+  transition: all 300ms ease-in;
   
 }
 .active-button{
@@ -130,6 +132,7 @@ br {
   cursor: pointer;
   box-shadow: 3px 3px 19px 0px rgba(0, 0, 0, 0.10);
   /* transform: scale(1.1); */
+  transition: all 300ms ease-in;
 
 }
 

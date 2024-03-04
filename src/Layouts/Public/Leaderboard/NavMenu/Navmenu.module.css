@@ -5,6 +5,7 @@
     width: 100%;
     position: fixed;
     top: 0;
+    border-bottom: 1px solid var(--Stroke, #E8E8E8);
 }.menu{
     padding-left: 30px;
 
@@ -53,7 +54,7 @@ color: #000000;
 .clicked{
   color: rgb(0, 0, 0);
   font-size: 18px;
-  padding: .7rem 1.4rem;
+  padding: .6rem 1.4rem;
   color: #000000;
   font-weight: bold;
   border-bottom: 2.5px solid #9747FF;

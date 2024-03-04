@@ -140,12 +140,14 @@ const Profile = () => {
         <div className={`${styles.wrapper} flexColStart paddings innerWidth`}>
           <div className={`${styles.topbanner} flexStart paddings`}>
             <div className={`${styles.left} flexColStart `}>
-              <div className={`${styles.top} flexStart`}>
+              {/* <div className={`${styles.top} flexStart`}>
                 <p className={styles.primary}>{currentDate.toDateString()}</p>
-              </div>
+              </div> */}
               <div className={`${styles.content} flexColStart `}>
-                <p className={styles.secondary}>Welcome Back </p>
-                <p className={styles.secondar}>{studentData?.student_name} </p>
+                <div className="flexColStart"> <p className={styles.secondary}>Welcome Back </p>
+                <p className={styles.secondar}>{studentData?.student_name} </p></div>
+               
+                <br />
                 <p className={styles.tert}>
                   Always stay updated in your student portal
                 </p>
@@ -264,36 +266,6 @@ const Profile = () => {
                   </tr>
                 )}
 
-                {/* <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr> */}
               </tbody>
             </table>
             {/* <table className={`${styles.customTable} paddings`}>

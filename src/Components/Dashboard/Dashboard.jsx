@@ -111,7 +111,7 @@ setError("Error fetching leaderboard data. Please try again.");
         <div className={Styles.container}>
           <div className={`${Styles.wrapper} flexColStart paddings`}>
             <div className={Styles.topbanner}>
-              <h4>Welcome to the admin Portal</h4>
+              <h4>Welcome to the admin portal</h4>
             </div>
             <br />
             <div className={`${Styles.student} flexColStart innerWidth`}>

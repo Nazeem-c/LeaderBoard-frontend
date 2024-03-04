@@ -63,6 +63,17 @@
     letter-spacing: -0.32px;
 }
 .primaryFOnt5{
+    color: rgb(10, 10, 10);
+    font-family: "Plus Jakarta Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.4px;
+    /* text-decoration-line: underline; */
+}
+
+.text1{
     color: var(--Secondary, #9747FF);
     font-family: "Plus Jakarta Sans";
     font-size: 20px;
@@ -72,6 +83,7 @@
     letter-spacing: -0.4px;
     text-decoration-line: underline;
 }
+
 .primaryFOnt6{
     color: var(--Secondary, #9747FF);
     font-family: "Plus Jakarta Sans";
