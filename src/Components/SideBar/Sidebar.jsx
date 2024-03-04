@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Styles from "./Sidebar.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { FaList } from "react-icons/fa";
@@ -9,7 +9,22 @@ const Sidebar = ({ obj }) => {
   const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
+  useEffect(() => {
+    const closeSidebar = () => {
+      setIsSidebarOpen(false);
+    };
+
+    // Add event listener to the document body to handle clicks outside of the sidebar
+    document.body.addEventListener("click", closeSidebar);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.body.removeEventListener("click", closeSidebar);
+    };
+  }, []);
+
+  const toggleSidebar = (e) => {
+    e.stopPropagation(); // Prevent click event from propagating to the document body
     setIsSidebarOpen(!isSidebarOpen);
   };
 

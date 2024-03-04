@@ -226,7 +226,7 @@ justify-content: center;
   }
   
   /* Hide the toggle button on screens larger than 768px (laptops/desktops) and iPads */
-  @media (min-width: 769px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  @media (min-width: 426px), (min-device-width: 768px) and (max-device-width: 1024px) {
     .toggleButton {
       display: none;
     }
