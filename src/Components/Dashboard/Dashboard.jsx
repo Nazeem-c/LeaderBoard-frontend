@@ -5,7 +5,6 @@ import { mailing } from "../../Services/Admin/Admin";
 import { toast } from "react-toastify"; // Import toast from react-toastify
 import "react-toastify/dist/ReactToastify.css"; 
 import { useLocation, useNavigate } from "react-router-dom";
-
 function Dashboard() {
 
   const [selectedValue, setSelectedValue] = useState('');

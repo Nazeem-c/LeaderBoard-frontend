@@ -6,7 +6,11 @@
     width: 100%;
     background: #F8F8F8;
     overflow: scroll;
+    transition: opacity 1s ease-in-out; 
+    display: flex;
+    align-items: center;
 }
+
 .columns{
     gap: 100px;
     /* padding-top: 60px;
