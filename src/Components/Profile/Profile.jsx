@@ -8,8 +8,7 @@ import {
 
 import Select from "react-select";
 
-import { useLocation, useNavigate } from 'react-router-dom';
-
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -20,37 +19,35 @@ const Profile = () => {
   const [sgpa, setSgpa] = useState(null);
   const [error, setError] = useState(null);
 
-//-----------------------------logout------------------------
-const studentId = sessionStorage.getItem('username');
+  //-----------------------------logout------------------------
+  const studentId = sessionStorage.getItem("username");
   const location = useLocation();
   const navigate = useNavigate();
-//   const [showLogoutModal, setShowLogoutModal] = useState(false);
-useEffect(() => {
+  //   const [showLogoutModal, setShowLogoutModal] = useState(false);
+  useEffect(() => {
     // Check if the URL contains '/logout'
-    if (location.pathname.includes('/logout')) {
+    if (location.pathname.includes("/logout")) {
       // If yes, show a browser-level notification
-      const isConfirmed = window.confirm('Are you sure you want to logout?');
-  
+      const isConfirmed = window.confirm("Are you sure you want to logout?");
+
       if (isConfirmed) {
-       
         sessionStorage.clear();
-        navigate('/');
+        navigate("/");
       } else {
-        
         navigate(`/students/${studentId}`); // Use backticks (`) for template literals
       }
     }
   }, [location.pathname, navigate, studentId]);
-  
-//=------------------------
 
-useEffect(() => {
-  // Check if adminId is not present (user is not authenticated)
-  if (!studentId) {
-    // Redirect to the home page
-    navigate('/login');
-  }
-}, [studentId, navigate]);
+  //=------------------------
+
+  useEffect(() => {
+    // Check if adminId is not present (user is not authenticated)
+    if (!studentId) {
+      // Redirect to the home page
+      navigate("/login");
+    }
+  }, [studentId, navigate]);
 
   const handleSemesterChange = (selectedOption) => {
     const selectedValue = selectedOption.value;
@@ -61,7 +58,7 @@ useEffect(() => {
     //  console.log(selectedSemester);
     // fetchscore();
   };
- 
+
   const fetchscore = async () => {
     try {
       console.log("Selected Semester: " + selectedSemester);
@@ -76,10 +73,10 @@ useEffect(() => {
 
       // Check the response status and structure
       if (response.statusCode === 404) {
-        setMarks(null); 
+        setMarks(null);
         setSgpa(null);
         setError(response.responseData.message);
-       
+
         // Clear the data when there is an error
       } else if (
         response &&
@@ -111,7 +108,6 @@ useEffect(() => {
     console.log(selectedSemester);
   }, [selectedSemester]);
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -124,10 +120,9 @@ useEffect(() => {
       }
     };
     // const data = studentData.responseData.student_details;
-   
+
     fetchData();
     setError(null);
-
   }, []);
   useEffect(() => {
     // Update the current date every second
@@ -137,59 +132,64 @@ useEffect(() => {
 
     // Cleanup the interval when the component unmounts
     return () => clearInterval(intervalId);
-  }, []); 
+  }, []);
 
   return (
     <div className={styles.container}>
-        {studentId ?  <div className={`${styles.warpper} flexColStart paddings innerWidth`}>
-        <div className={`${styles.topbanner} flexStart paddings`}>
-          <div className={`${styles.left} flexColStart `}>
-            <div className={`${styles.top} flexStart`}>
-              <p className={styles.primary}>{currentDate.toDateString()}</p>
+      {studentId ? (
+        <div className={`${styles.wrapper} flexColStart paddings innerWidth`}>
+          <div className={`${styles.topbanner} flexStart paddings`}>
+            <div className={`${styles.left} flexColStart `}>
+              {/* <div className={`${styles.top} flexStart`}>
+                <p className={styles.primary}>{currentDate.toDateString()}</p>
+              </div> */}
+              <div className={`${styles.content} flexColStart `}>
+                <div className="flexColStart"> <p className={styles.secondary}>Welcome Back </p>
+                <p className={styles.secondar}>{studentData?.student_name} </p></div>
+               
+                <br />
+                <p className={styles.tert}>
+                  Always stay updated in your student portal
+                </p>
+              </div>
             </div>
-            <div className="flexColStart">
-              <p className={styles.secondary}>Welcome Back </p>
-              <p className={styles.secondar}>{studentData?.student_name} </p>
-              <p className={styles.tert}>
-                Always stay updated in your student portal
+            <div className={`${styles.detailscontainer} flexColStart`}>
+              <p className={`${styles.headtext}`}>
+                {studentData?.student_name}
               </p>
+              <p className={`${styles.subtext}`}>
+                STDSTL{studentData?.student_id}
+              </p>
+              <br />
+              <p className={`${styles.textcontent} ${styles.textcontent3}`}>
+                Department : {studentData?.dep_name}{" "}
+              </p>
+              <p className={`${styles.textcontent} ${styles.textcontent3}`}>
+                College : {studentData?.college_name}
+              </p>
+              <p className={`${styles.textcontent} ${styles.textcontent3}`}>
+                College ID : {studentData?.college_id}
+              </p>
+              <p className={`${styles.textcontent} ${styles.textcontent3}`}>
+                Batch : {studentData?.batch_name}
+              </p>
+              <br />
+              <p className={`${styles.textcontent4}`}>
+                CGPA : {studentData?.CGPA}
+              </p>
+              {/* <p className={`${styles.textcontent}`}>Mail : {studentData?.student_id}</p> */}
+            </div>
+            <div className={`${styles.right} innerWidth`}>
+              <img
+                className={styles.img}
+                src={process.env.PUBLIC_URL + "/Assets/profile.png"}
+                alt="banner"
+              />
             </div>
           </div>
-          <div className={`${styles.detailscontainer} flexColStart`}>
-            <p className={`${styles.headtext}`}>{studentData?.student_name}</p>
-            <p className={`${styles.subtext}`}>
-              STDSTL{studentData?.student_id}
-            </p>
-            <br />
-            <p className={`${styles.textcontent} ${styles.textcontent3}`}>
-              Department : {studentData?.dep_name}{" "}
-            </p>
-            <p className={`${styles.textcontent} ${styles.textcontent3}`}>
-              College : {studentData?.college_name}
-            </p>
-            <p className={`${styles.textcontent} ${styles.textcontent3}`}>
-              College ID : {studentData?.college_id}
-            </p>
-            <p className={`${styles.textcontent} ${styles.textcontent3}`}>
-              Batch : {studentData?.batch_name}
-            </p>
-            <br />
-            <p className={`${styles.textcontent4}`}>
-              CGPA : {studentData?.CGPA}
-            </p>
-            {/* <p className={`${styles.textcontent}`}>Mail : {studentData?.student_id}</p> */}
-          </div>
-          <div className={`${styles.right} innerWidth`}>
-            <img
-              className={styles.img}
-              src={process.env.PUBLIC_URL + "/Assets/profile.png"}
-              alt="banner"
-            />
-          </div>
-        </div>
-        <div className={`${styles.scoreboard} paddings innerWidth`}>
-          <p className={`${styles.scoreheading}`}>Score Card</p>
-          {/* <select name="" id="">
+          <div className={`${styles.scoreboard} paddings innerWidth`}>
+            <p className={`${styles.scoreheading}`}>Score Card</p>
+            {/* <select name="" id="">
             <option value="" disabled selected>
               Select Semester
             </option>
@@ -197,110 +197,82 @@ useEffect(() => {
             <option value="semester2">Semester 2</option>
           </select> */}
 
-          <Select
-            defaultValue={null} // Set to null to display placeholder by default
-            onChange={(selectedOption) => handleSemesterChange(selectedOption)} // Uncomment and add your onChange function if needed
-            options={semesterOptions.map((semester) => ({
-              value: semester,
-              label: `Semester ${semester}`,
-            }))}
-            className={styles.selectField}
-            isSearchable
-            placeholder="Select the semester" // Placeholder text
-            styles={{
-              control: (provided, state) => ({
-                ...provided,
-                height: 53,
-                backgroundColor: "white",
-                borderColor: state.isFocused ? "#9747FF" : "white",
-                "&:hover": {
-                  borderBottomColor: "#9747FF",
-                },
-              }),
-              option: (provided, state) => ({
-                ...provided,
-                color: "#9747FF",
-                backgroundColor: state.isSelected ? "white" : "white",
-                "&:hover": {
-                  backgroundColor: "#F0F0F0",
-                },
-              }),
-              singleValue: (provided, state) => ({
-                ...provided,
-                color: "#9747FF",
-              }),
-            }}
-          />
-          <br />
-          {error &&  <div>
-          <p className={`${styles.Error}`}>{error}</p>
-          </div>}
-          <table className={`${styles.customTable} paddings`}>
-           {!error && <thead className={styles.tablehead}>
-              <tr>
-                <th >Course Id</th>
-                <th >Course Name</th>
-                <th >Mark</th>
-              </tr>
-            </thead>}
-            <tbody className={styles.tablebody}>
-              {marks &&
-                marks.map((score) => (
-                  <tr key={score.course_id}>
-                    <td>{score.course_id}</td>
-                    <td>{score.course_name}</td>
-                    <td>{score.score}</td>
+            <Select
+              defaultValue={null} // Set to null to display placeholder by default
+              onChange={(selectedOption) =>
+                handleSemesterChange(selectedOption)
+              } // Uncomment and add your onChange function if needed
+              options={semesterOptions.map((semester) => ({
+                value: semester,
+                label: `Semester ${semester}`,
+              }))}
+              className={styles.selectField}
+              isSearchable
+              placeholder="Select the semester" // Placeholder text
+              styles={{
+                control: (provided, state) => ({
+                  ...provided,
+                  height: 53,
+                  backgroundColor: "white",
+                  borderColor: state.isFocused ? "#9747FF" : "white",
+                  "&:hover": {
+                    borderBottomColor: "#9747FF",
+                  },
+                }),
+                option: (provided, state) => ({
+                  ...provided,
+                  color: "#9747FF",
+                  backgroundColor: state.isSelected ? "white" : "white",
+                  "&:hover": {
+                    backgroundColor: "#F0F0F0",
+                  },
+                }),
+                singleValue: (provided, state) => ({
+                  ...provided,
+                  color: "#9747FF",
+                }),
+              }}
+            />
+            <br />
+            {error && (
+              <div>
+                <p className={`${styles.Error}`}>{error}</p>
+              </div>
+            )}
+            <table className={`${styles.customTable} paddings`}>
+              {!error && (
+                <thead className={styles.tablehead}>
+                  <tr>
+                    <th>Course Id</th>
+                    <th>Course Name</th>
+                    <th>Mark</th>
                   </tr>
-                ))}{sgpa &&
-              <tr className={styles.tablebody2} colSpan="3">
-                <td className={styles.sgpa}></td>
-                <td className={styles.sgpa}>SGPA : {sgpa}</td>
-                <td className={styles.sgpa}></td>
-              </tr>}
+                </thead>
+              )}
+              <tbody className={styles.tablebody}>
+                {marks &&
+                  marks.map((score) => (
+                    <tr key={score.course_id}>
+                      <td>{score.course_id}</td>
+                      <td>{score.course_name}</td>
+                      <td>{score.score}</td>
+                    </tr>
+                  ))}
+                {sgpa && (
+                  <tr className={styles.tablebody2} colSpan="3">
+                    <td className={styles.sgpa}></td>
+                    <td className={styles.sgpa}>SGPA : {sgpa}</td>
+                    <td className={styles.sgpa}></td>
+                  </tr>
+                )}
 
-              {/* <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr>
-              <tr>
-                <td>CST142</td>
-                <td>DATA STRUCTURES</td>
-                <td>89</td>
-              </tr> */}
-            </tbody>
-          </table>
-          {/* <table className={`${styles.customTable} paddings`}>
-            <thead className={styles.tablehead}></thead>
-            <tbody>
-              <tr colSpan="3" className={styles.sgpa}>
-                SGPA : {sgpa}
-              </tr>
-            </tbody>
-          </table> */}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div> : navigate('/login')}
-     
+      ) : (
+        navigate("/login")
+      )}
     </div>
   );
 };

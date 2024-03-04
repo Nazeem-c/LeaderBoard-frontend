@@ -1,7 +1,16 @@
 /* styles.css */
+.wrapper{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
 .container{
     display: flex;
     justify-content: center;
+    align-items: center;
+    
     
     
 }
@@ -14,6 +23,8 @@
 
 
 }
+
+
 .imagepad{
     padding: 20px;
 }
@@ -24,10 +35,10 @@
 
 .leftBanner{
     border-radius: 10px 0 0 10px;
-    height: 600px;
+    max-height: 600px;
     background-color:var(--secondary);
-    width: 500px;
-    max-width: 400px;
+    width: 436px;
+    /* max-width: 400px; */
     
   /* padding: 20px; */
   
@@ -146,10 +157,75 @@
   } */
   
   /* Responsive styles */
-  @media (max-width: 600px) {
+  /* @media (max-width: 600px) {
     div {
       max-width: 100%;
       padding: 10px;
     }
-  }
+  } */
+
+
+
+
+
+
   
+  @media (min-width:769px) and (max-width: 1175px) {
+   .Banner{
+    gap: -50px;
+    padding-top: 100px;
+    flex-direction: column;
+
+   }
+   .leftBanner{
+    border-radius: 0;
+    /* max-width: 436px; */
+    margin-top: 500px;
+   }
+   .Login{
+    MARGIN-top: -55px;
+    border-radius: 0px;
+   }
+ 
+    }
+
+    @media (max-width: 425px) {
+      .imagepad{
+        opacity: 0;
+      }
+      .leftBanner{
+        height: 309px;
+      }
+      .Login{
+    MARGIN-top: -55px;
+    border-radius: 0px;
+   }
+    }
+
+    
+@media (min-width:426px) and (max-width: 768px) {
+      .Banner{
+        
+       gap: -50px;
+       height: 100vh;
+       /* margin-top: 50px; */
+      }
+      .leftBanner{
+        width: 500px;
+        height: 300px;
+       border-radius: 0;
+       max-width: 436px;
+       margin-top: 100px;
+      }
+      .Login{
+height: 450px;
+
+       margin-bottom: 50px;
+       MARGIN-top: -155px;
+      }
+      
+       }
+  
+
+
+    

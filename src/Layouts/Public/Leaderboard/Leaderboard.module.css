@@ -1,4 +1,5 @@
 .Leaderboard{
     width: 100%;
+    overflow: scroll;
 }
 

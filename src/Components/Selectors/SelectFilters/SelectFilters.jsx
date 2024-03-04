@@ -125,6 +125,7 @@ useEffect(() => {
                 backgroundColor: "white", // Set the background color
                 borderColor: state.isFocused ? "#9747FF" : "white", // Set border color on focus
                 "&:hover": {
+                  
                   borderBottomColor: "#9747FF", // Set border color on hover
                 }, // Set the border color
               }),

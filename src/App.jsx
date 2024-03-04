@@ -3,6 +3,9 @@ import PublicRoutes from "./LayoutRoots/Public/PublicRoutes";
 import StudentRoutes from "./LayoutRoots/Student/StudentRoutes";
 import AdminRoutes from "./LayoutRoots/Admin/AdminRoutes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -17,6 +20,7 @@ function App() {
           <Route exact path="/*" element={<PublicRoutes />} />
      </Routes>
       </BrowserRouter>
+      <ToastContainer />
       {/* <PublicRoutes /> */}
       {/* <StudentRoutes/> */}
       {/* <RoutesLayout/> */}

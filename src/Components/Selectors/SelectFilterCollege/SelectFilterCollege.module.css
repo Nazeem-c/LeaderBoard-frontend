@@ -1,5 +1,5 @@
 .filterbutton{
-    width: 70px;
+    /* width: 70px; */
     gap: 5px;
 }
 .filterinputs{
@@ -20,6 +20,11 @@
   }
   
   .button:hover{
+    font-weight: 800;
+
+    color: var(--secondary);
+    box-shadow: 3px 3px 19px 0px rgba(0, 0, 0, 0.10);
+    background: #ffffff;
     cursor: pointer;
     transform: scale(1.1);
     
@@ -98,3 +103,25 @@
   
   /* Your existing styles... */
   
+
+  @media (min-width:426px) and (max-width: 768px){
+
+    .filterinputs{
+      flex-direction: column;
+      gap: 5px;
+    }
+    .filters{
+      flex-direction: column;
+    
+    }
+    .selectField {
+      width: 661px;
+    }
+    .filterbutton{
+      gap: 7px;
+    }
+    .button{
+      padding: 1rem 9.1rem;
+    }
+      }
+    

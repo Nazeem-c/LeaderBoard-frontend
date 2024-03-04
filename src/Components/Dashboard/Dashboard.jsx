@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Styles from "./Dashboard.module.css";
 import Select from "react-select";
 import { mailing } from "../../Services/Admin/Admin";
-
+import { toast } from "react-toastify"; // Import toast from react-toastify
+import "react-toastify/dist/ReactToastify.css"; 
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Dashboard() {
@@ -71,11 +72,31 @@ const sendMail = async()=>{
   response.responseData 
 ) {
   setdata("Email sent successfully!");
+  toast.success("Email sent successfully", {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    })
   // Clear the error when the data is successfully loaded
   setError(null);
 } else {
   console.error("Invalid API response structure:", response);
   setdata("Unsuccessfull!");
+  toast.error("Unsuccessfull!",{
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
   // Set an error if the response structure is unexpected
   setError("Unexpected API response");
  
@@ -111,13 +132,13 @@ setError("Error fetching leaderboard data. Please try again.");
         <div className={Styles.container}>
           <div className={`${Styles.wrapper} flexColStart paddings`}>
             <div className={Styles.topbanner}>
-              <h4>Welcome to the admin Portal</h4>
+              <h4>Welcome to the admin portal</h4>
             </div>
             <br />
             <div className={`${Styles.student} flexColStart innerWidth`}>
               <h4>Mailing Score Card</h4>
               <div className={`${Styles.inputs} flexStart innerWidth`}>
-                <div>
+                <div className={Styles.contain}>
                   <input
                     type="text"
                     className={`${Styles.inputfield} innerWidth`}
@@ -165,7 +186,7 @@ setError("Error fetching leaderboard data. Please try again.");
                 </button>
               </div>
               <div className={`${Styles.status} flexStart`}>
-                <span>Status : &nbsp; </span>
+                {/* <span>Status : &nbsp; </span> */}
                 <span> {data}</span>
               </div>
               {error && <div className={`${Styles.errorclass}`}>

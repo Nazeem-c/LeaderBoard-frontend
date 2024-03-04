@@ -1,22 +1,22 @@
 .topbanner{
     /* background: linear-gradient(99deg, #925FE2 53.12%, #DFCFF7 155.43%); */
     background-color: var(--secondary);
-    position: absolute;
-    top: 5%;
+    /* position: absolute; */
+    /* top: 5%; */
     /* width: 00px; */
     gap: 212px;
 
 }
-/* .container{
-
-    margin-bottom: 1.5rem;
-} */
+.container{
+ position: relative;
+   top: -170px;
+}
 
 .wrapper{
     /* justify-content: center; */
     /* gap: 20px; */
     height: auto;
-    position: absolute;
+    /* position: absolute; */
     
 }
 .primary{
@@ -39,6 +39,9 @@ font-weight: 500;
 letter-spacing: -1px;
 line-height: 40px;
 }
+/* .content{
+  gap: 30px;
+} */
 
 .secondar{
     color: var(--Primary, #ffffff);
@@ -223,6 +226,7 @@ line-height: normal;
     border-radius: 60px;
     /* margin-right: 20px; */
     border-collapse: collapse;/* Remove default cell spacing */
+    margin-bottom: 50px;
     
   }
   
@@ -428,4 +432,66 @@ line-height: normal;
   }
   
   /* Your existing styles... */
-  
+  @media (min-width:426px) and (max-width: 768px){
+
+    .container{
+        top: 67px;
+     }
+     .topbanner{
+      flex-direction: column;
+      width: 660px;
+      gap: 60px;
+     }
+     .left{
+      justify-content: center;
+      align-items: center;
+     }
+     .detailscontainer{
+      padding-left: 0px;
+      border-left: none;
+      align-items: center;
+     }
+     .content{
+      align-items: center;
+     }
+     .customTable{
+      width: 655px;
+
+     }
+
+  }
+  @media (max-width: 425px){
+    .container{
+      top: 0px;
+   }
+   .topbanner{
+    flex-direction: column;
+    width: 100vw;
+    gap: 35px;
+   }
+   .left{
+    justify-content: center;
+    align-items: center;
+   }
+   .detailscontainer{
+    padding-left: 0px;
+    border-left: none;
+    align-items: center;
+   }
+   .content{
+    align-items: center;
+   }
+   .customTable{
+    width: 100%;
+   }
+   .wrapper{
+    padding: 1rem;
+   }
+   .scoreboard{
+    padding-left: 4rem;
+    width: 100vw;
+   }  
+   .selectField{
+    width: 100vw;
+   }
+  }

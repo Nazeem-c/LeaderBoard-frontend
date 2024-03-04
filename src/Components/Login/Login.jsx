@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Styles from "./Login.module.css";
+import { toast } from "react-toastify"; // Import toast from react-toastify
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for react-toastify
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -16,58 +18,67 @@ const LoginForm = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const setSessionData = (roll, user_id, username) => {
-    // Use localStorage to store session data
-    sessionStorage.setItem("roll", roll);
-    sessionStorage.setItem("user_id", user_id);
-    sessionStorage.setItem("username", username);
-  };
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post(
         "http://127.0.0.1:5001/api/v1/login",
-        formData, 
+        formData
       );
 
       if (response.data.errorMessage) {
-        console.error(response.data.responseData.error);
-        setError(response.data.responseData.error);
-        // Handle authentication error
+        setError(response.data.errorMessage);
+        toast.error(response.data.errorMessage,{
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          }); // Display error message as toast
       } else {
         const { roll, user_id, username } = response.data.responseData;
-        setSessionData(roll, user_id, username);
-        // document.cookie = `sessionToken=${username}; path=/`;
 
-        // Generate the endpoint dynamically based on the user's role and username
-        let endpoint;
-        if(username !== sessionStorage.getItem("username")){
-          navigate('/');
-          console.log("not access")
-        }
-        
+        sessionStorage.setItem("roll", roll);
+        sessionStorage.setItem("user_id", user_id);
+        sessionStorage.setItem("username", username);
+
+        toast.success("Login Successful", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          }); // Display success message as toast
+
         if (roll === "student") {
-          // Check if the entered username matches the authenticated student's username
-          if (formData.username === username) {
-            endpoint = `/students/${username}`;
-          } else {
-            console.error("Unauthorized access. Invalid username.");
-            // Handle unauthorized access
-            return;
-          }
+          navigate(`/students/${username}`);
         } else if (roll === "admin") {
-          endpoint = `/admin/${username}`;
+          navigate(`/admin/${username}`);
         } else {
           console.error("Invalid user role:", roll);
-          // Handle the case where the role is not student or admin
-          return;
         }
-
-        navigate(endpoint);
       }
     } catch (error) {
       console.error("Error during login:", error);
+      setError("Error during login. Please try again later.");
+      toast.error("Error during login. Please try again later.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }
   };
 

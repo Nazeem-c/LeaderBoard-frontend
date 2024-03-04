@@ -1,7 +1,7 @@
 .dashboard{
     /* position: fixed; */
     width: 100%;
-    height: 100%;
+    height: 100vh;
     left: 14%;
     z-index: -1;
     background-color: #F8F8F8;
@@ -18,13 +18,13 @@
     border-right: 1px solid var(--Stroke, #E8E8E8);
     background: var(--Primary, #ffffff);
     width: 30%;
-    height: 100%;
+    height: 100vh;
 }
 .Admin{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    
+
 }
 
 /* @media (max-width: 800px){
@@ -35,3 +35,21 @@
         margin-right: 0px; 
     }
 } */
+@media (max-width: 425px){
+    .Admin{
+        display: flex;
+        flex-direction: column;
+    }
+    /* .Sidebar{
+        display: fixed;
+    } */
+}
+
+
+@media (min-width:426px) and (max-width: 768px){
+
+    .Dashboard{
+        padding-top: 80px;
+    }
+    
+}

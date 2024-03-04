@@ -9,7 +9,7 @@ import Styles from "./LeaderBoardRotes.module.css"
 function LeaderBoardRotes() {
   return (
     <div>
-      <div className="flexColStart">
+      <div className={`${Styles.page} flexColStart`}>
         <NavMenu />
         <div className={`${Styles.dashboard} fullwidth`}>
           <Routes>
@@ -23,7 +23,6 @@ function LeaderBoardRotes() {
           </Routes>
         </div>
       </div>
-      <h1>hgfdc</h1>
       <Outlet/>
     </div>
   );

@@ -60,7 +60,18 @@ import { Style } from "@material-ui/icons";
 
 function DepartmentLeaderBoardTable({ leaderboardData, error }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 12;
+  let rowsPerPage;
+
+  // Adjust rowsPerPage based on screen size
+  if (window.innerWidth <= 768) {
+    rowsPerPage = 8; // Display 12 rows for larger screens (laptop/desktop)
+  }
+  else if (window.innerWidth >= 768) {
+    rowsPerPage = 12;
+  }
+  else {
+    rowsPerPage = 6; // Display 6 rows for smaller screens (tablet/mobile)
+  }
 
   if (!leaderboardData || error) {
     return null; // or return some fallback UI if leaderboardData is null or there's an error
@@ -77,7 +88,7 @@ function DepartmentLeaderBoardTable({ leaderboardData, error }) {
   };
 
   return (
-    <div className={`${Styles.maintable} innerWidth flexColStart`}>
+    <div className={`${Styles.maintable} innerWidth flexColCenter`}>
       <table className={`${Styles.customTable} paddings`}>
         <thead className={Styles.tablehead}>
           <tr>
@@ -90,7 +101,7 @@ function DepartmentLeaderBoardTable({ leaderboardData, error }) {
         <tbody className={Styles.tablebody}>
           {slicedData.map((Department => (
             <tr key={Department.dep_id}>
-              <td>{Department.ranking}</td>
+              <td>{Department.rank}</td>
               <td>{Department.dep_id}</td>
               <td>{Department.dep_name}</td>
               <td>{Department.pass_percentage}</td>
