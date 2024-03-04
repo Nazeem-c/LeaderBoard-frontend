@@ -281,5 +281,44 @@ justify-content: center;
         background: var(--Primary, #ffffff);
         box-shadow: 3px 3px 19px 0px rgba(0, 0, 0, 0.10);
         }
+        /* Sidebar.module.css */
+
+.Sidebar {
+    width: 80%; /* Set initial width to 80% */
+    position: fixed; /* Fix the position */
+    top: 0;
+    left: -80%; /* Initially hide the sidebar by shifting it off-screen */
+    bottom: 0;
+    background-color: white; /* Set background color */
+    transition: left 0.3s ease-in-out; /* Add a transition effect */
+  }
+  
+  .Sidebar.open {
+    left: 0; /* Show the sidebar by setting left to 0 */
+  }
+  
+  .wrapper {
+    height: 100vh; /* Set height to 100% of the viewport height */
+    overflow: hidden; /* Hide overflow to prevent scrolling */
+  }
+  
+  /* Toggle button styles */
+  .toggleButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+  }
+  
+  .toggleButton:focus {
+    outline: none;
+  }
+  .Sidebar {
+    z-index: 15;
+  }
+  
 }
 
