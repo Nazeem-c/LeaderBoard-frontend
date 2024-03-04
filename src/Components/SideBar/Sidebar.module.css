@@ -6,7 +6,30 @@
 
 
   
+  /* Sidebar.module.css */
 
+/* Toggle button styles */
+.toggleButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+  }
+  
+  .toggleButton:focus {
+    outline: none;
+  }
+  
+  /* Hide the toggle button on screens larger than 768px (laptops and desktops) */
+  @media (min-width: 769px) {
+    .toggleButton {
+      display: none;
+    }
+  }
+  
 
 .container{
     height: 100%;
@@ -184,6 +207,31 @@ justify-content: center;
         .Sidebar{
             z-index: 15;
         }
+
+        /* Sidebar.module.css */
+
+/* Toggle button styles */
+.toggleButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+  }
+  
+  .toggleButton:focus {
+    outline: none;
+  }
+  
+  /* Hide the toggle button on screens larger than 768px (laptops/desktops) and iPads */
+  @media (min-width: 769px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    .toggleButton {
+      display: none;
+    }
+  }
+  
 
         
 }
