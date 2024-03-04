@@ -12,6 +12,7 @@
     align-items: center;
     
     
+    
 }
 .Banner{
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
@@ -206,7 +207,8 @@
       .Banner{
         
        gap: -50px;
-       margin-top: 50px;
+       height: 100vh;
+       /* margin-top: 50px; */
       }
       .leftBanner{
         width: 500px;
@@ -217,9 +219,11 @@
       }
       .Login{
 height: 450px;
+
        margin-bottom: 50px;
-       MARGIN-top: -55px;
+       MARGIN-top: -155px;
       }
+      
        }
   
 

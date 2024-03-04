@@ -268,14 +268,6 @@ const Profile = () => {
 
               </tbody>
             </table>
-            {/* <table className={`${styles.customTable} paddings`}>
-            <thead className={styles.tablehead}></thead>
-            <tbody>
-              <tr colSpan="3" className={styles.sgpa}>
-                SGPA : {sgpa}
-              </tr>
-            </tbody>
-          </table> */}
           </div>
         </div>
       ) : (

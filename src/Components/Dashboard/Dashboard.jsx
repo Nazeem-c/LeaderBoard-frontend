@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Styles from "./Dashboard.module.css";
 import Select from "react-select";
 import { mailing } from "../../Services/Admin/Admin";
-
+import { toast } from "react-toastify"; // Import toast from react-toastify
+import "react-toastify/dist/ReactToastify.css"; 
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Dashboard() {
@@ -71,11 +72,31 @@ const sendMail = async()=>{
   response.responseData 
 ) {
   setdata("Email sent successfully!");
+  toast.success("Email sent successfully", {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    })
   // Clear the error when the data is successfully loaded
   setError(null);
 } else {
   console.error("Invalid API response structure:", response);
   setdata("Unsuccessfull!");
+  toast.error("Unsuccessfull!",{
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
   // Set an error if the response structure is unexpected
   setError("Unexpected API response");
  
