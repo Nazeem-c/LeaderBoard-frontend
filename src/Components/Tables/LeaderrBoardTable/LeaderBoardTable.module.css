@@ -1,6 +1,6 @@
 
 .customTable{
-    width: 1383px;
+  width: 74.9vw;
     border-radius: 60px;
     /* margin-right: 20px; */
     border-collapse: collapse;/* Remove default cell spacing */
@@ -20,7 +20,7 @@
     color: var(--secondary);
     font-weight: 600;/* Background color for header cells */
     text-align: center;
-    padding: 14px;
+    padding: 12px;
   }
 
 

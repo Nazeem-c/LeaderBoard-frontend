@@ -7,7 +7,6 @@ import {
 } from "../../Services/student/student";
 import Modal from "../Modal/Modal";
 import Select from "react-select";
-import LogoutModal from "../Logout/Logout";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Profile = () => {

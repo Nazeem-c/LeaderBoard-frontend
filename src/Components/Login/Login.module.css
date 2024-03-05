@@ -4,13 +4,13 @@
   align-items: center;
   height: 100vh;
   overflow-y: scroll;
+
 }
 
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    
     
     
 }
@@ -23,6 +23,12 @@
 
 
 }
+
+
+
+
+
+
 
 
 .imagepad{

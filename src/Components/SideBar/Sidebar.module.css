@@ -6,7 +6,30 @@
 
 
   
+  /* Sidebar.module.css */
 
+/* Toggle button styles */
+.toggleButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+  }
+  
+  .toggleButton:focus {
+    outline: none;
+  }
+  
+  /* Hide the toggle button on screens larger than 768px (laptops and desktops) */
+  @media (min-width: 769px) {
+    .toggleButton {
+      display: none;
+    }
+  }
+  
 
 .container{
     height: 100%;
@@ -185,14 +208,32 @@ justify-content: center;
             z-index: 15;
         }
 
+        /* Sidebar.module.css */
+
+/* Toggle button styles */
+.toggleButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+  }
+  
+  .toggleButton:focus {
+    outline: none;
+  }
+  
+  /* Hide the toggle button on screens larger than 768px (laptops/desktops) and iPads */
+  @media (min-width: 426px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    .toggleButton {
+      display: none;
+    }
+  }
+  
+
         
-}
-/* Update the class to match the one used in JSX */
-.menuIcon {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    opacity: 50%;
 }
 
 /* @media (max-height: 800px){
@@ -203,3 +244,59 @@ justify-content: center;
 
 
 
+
+
+
+@media (max-width: 425px) {
+   
+    .Sidebar {
+      width: 80%; /* Set initial width to 80% */
+      position: fixed; /* Fix the position */
+      top: 0;
+      left: -80%; /* Initially hide the sidebar by shifting it off-screen */
+      bottom: 0;
+      background-color: white; /* Set background color */
+      transition: left 0.3s ease-in-out; /* Add a transition effect */
+      z-index: 15;
+    }
+    
+    .Sidebar.open {
+      left: 0; /* Show the sidebar by setting left to 0 */
+    }
+    
+    .wrapper {
+      height: 100vh; /* Set height to 100% of the viewport height */
+      overflow: hidden; /* Hide overflow to prevent scrolling */
+    }
+    
+    /* Toggle button styles */
+    .toggleButton {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 20;
+    }
+    
+    .toggleButton:focus {
+      outline: none;
+    }
+    
+    .Sidebar_wrapper__ij9Ci {
+      height: 100vh;
+      overflow: hidden;
+    }
+  
+    .item {
+        width: 230px; /* Set width to 100% to fit within the sidebar */
+    }
+    .logoDesign{
+        width: 80%;
+    }
+    .menuColumns{
+        margin-top: 50px;
+    }
+  }
+  

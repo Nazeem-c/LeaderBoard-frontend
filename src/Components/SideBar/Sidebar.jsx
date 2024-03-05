@@ -1,66 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Styles from "./Sidebar.module.css";
-// import { FaHome, FaList, FaSignInAlt } from "react-icons/fa";
-import { Link, useLocation} from "react-router-dom";
-import { FaList, FaUser, FaSignOutAlt } from "react-icons/fa";
-import { BrowserRouter, Routes, Route ,useParams} from "react-router-dom";
-
-
+import { Link, useLocation } from "react-router-dom";
+import { FaList } from "react-icons/fa";
+import { useParams } from "react-router-dom"; // Import useParams
 
 const Sidebar = ({ obj }) => {
-
   const { studentId } = useParams();
-  
-  // const [activeTab, setActiveTab] = useState("home");
   const location = useLocation();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Define a function to determine if the link is active
+  useEffect(() => {
+    const closeSidebar = () => {
+      setIsSidebarOpen(false);
+    };
+
+    // Add event listener to the document body to handle clicks outside of the sidebar
+    document.body.addEventListener("click", closeSidebar);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.body.removeEventListener("click", closeSidebar);
+    };
+  }, []);
+
+  const toggleSidebar = (e) => {
+    e.stopPropagation(); // Prevent click event from propagating to the document body
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   const isActive = (path) => {
-    // Check if the current path is exactly the provided path or starts with the path followed by a '/'
     return location.pathname === path || location.pathname.startsWith(`${path}/`);
   };
-  
-
 
   return (
     <>
-     <div className={Styles.Sidebar}>
-      <div className={Styles.container}>
-        <div className={`${Styles.wrapper}`}>
-          <div className={`${Styles.logoDesign} flexStart`}>
-            <img src="Assets/Logo.svg" alt="logo" />
-          </div>
-          <div className={Styles.menuColumns}>
-            <div className={`${Styles.menulist} flexColStart`}>
-              {obj.map((item, index) => (
-                <Link to={`/${item.link}`} key={index}>
-                  <div
-                    // onClick={() => handleTabClick(item.name.toLowerCase())}
-                    // className={`${Styles.item} ${
-                    //   activeTab === item.name.toLowerCase()
-                    //     ? "active-button"
-                    //     : "button"
-                    // } `}
-                    className={`${Styles.item} ${isActive(`/${item.link}`) ? 'active-button' : 'button'}`}
-                  >
-                    <div className={Styles.menuImahe}>
-                      {item.icon &&
-                        React.createElement(item.icon, {
-                          className: Styles.icon,
-                        })}
+      {/* Toggle button for sidebar */}
+      <button className={Styles.toggleButton} onClick={toggleSidebar}>
+        <FaList />
+      </button>
+
+      {/* Sidebar content */}
+      <div className={`${Styles.Sidebar} ${isSidebarOpen ? Styles.open : ""}`}>
+        <div className={Styles.container}>
+          <div className={Styles.wrapper}>
+            <div className={`${Styles.logoDesign} flexStart`}>
+              <img src="Assets/Logo.svg" alt="logo" />
+            </div>
+            <div className={Styles.menuColumns}>
+              <div className={`${Styles.menulist} flexColStart`}>
+                {obj.map((item, index) => (
+                  <Link to={`/${item.link}`} key={index}>
+                    <div className={`${Styles.item} ${isActive(`/${item.link}`) ? "active-button" : "button"}`}>
+                      <div className={Styles.menuImahe}>
+                        {item.icon && React.createElement(item.icon, { className: Styles.icon })}
+                      </div>
+                      <span className={`${Styles.menutext}`}>{item.name}</span>
                     </div>
-                    <span className={`${Styles.menutext}`}>{item.name}</span>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    {/* <Outlet/> */}
     </>
-   
   );
 };
 

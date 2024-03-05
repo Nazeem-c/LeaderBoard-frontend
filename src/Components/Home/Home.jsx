@@ -18,7 +18,7 @@ function Home() {
                         <a className={Styles.primaryFOnt4}>At Stellar University, we believe in fostering a dynamic learning environment where curiosity meets knowledge and innovation knows no bounds. Established with a commitment to excellence, Stellar University stands as a beacon of higher education, dedicated to shaping the leaders of tomorrow.</a>
                     </div>
                     <div className={Styles.items}>
-                        <a className={Styles.primaryFOnt5}>Click here to <span className={`${Styles.text1} ${Styles.primaryFOnt5}`}>Admission </span>and <span className={`${Styles.primaryFOnt5} ${Styles.text1} `}>Course</span> Details</a>
+                        <a className={Styles.primaryFOnt5}>Click here to &nbsp;<span className={`${Styles.text1} ${Styles.primaryFOnt5}`}> Admission  </span>&nbsp; and  &nbsp;<span className={`${Styles.primaryFOnt5} ${Styles.text1} `}>Course</span>&nbsp; Details</a>
                     </div>
                     <div className={`${Styles.items} flexColStart`}>
                         <a className={Styles.primaryFOnt6}>Our Vision:</a>

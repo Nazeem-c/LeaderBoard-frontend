@@ -1,8 +1,8 @@
 .NavMenu{
   z-index: 2;
     background-color: #ffffff;
-    height: 3rem;
-    width: 100%;
+    height: 4rem;
+    width: 100vw;
     position: fixed;
     top: 0;
     border-bottom: 1px solid var(--Stroke, #E8E8E8);
@@ -19,9 +19,9 @@
     z-index: 2;
 }
 .menuItem{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 100;
-  padding: .6rem 1.4rem;
+    padding: .6rem 1.4rem;
   color: #000000;
 
   /* background:  #9747FF; */
@@ -30,7 +30,7 @@
   /* transition: all 300ms ease-in; */
 }
 .menuItem1{
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 100;
 padding: .6rem 1.4rem;
 color: #000000;
@@ -41,7 +41,7 @@ color: #000000;
 /* transition: all 300ms ease-in; */
 }
 .menuItem2{
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 100;
 padding: .6rem 1.4rem;
 color: #000000;
@@ -53,8 +53,8 @@ color: #000000;
 }
 .clicked{
   color: rgb(0, 0, 0);
-  font-size: 18px;
-  padding: .6rem 1.4rem;
+  font-size: 20px;
+  padding: 1.1rem 1.4rem;
   color: #000000;
   font-weight: bold;
   border-bottom: 2.5px solid #9747FF;
@@ -172,4 +172,88 @@ transform: scale(1.1);
 }
 
 
-@media (max-width: 425px){}
+@media (max-width: 425px){
+  .NavMenu{
+    top: 80px;
+    z-index: 2;
+    
+      height: 3rem;
+      width: 100%;
+      position: fixed;
+      /* position: relative; */
+    top: 0;
+      /* top: 0; */
+  }
+  .menucontainer{
+    
+    justify-content: center;
+  }
+  
+  .menu{
+    padding-left: 0px;
+  
+  }
+  
+  
+  .menuItem{
+    font-size: 12px;
+  font-weight: 100;
+  padding: .6rem .5rem;
+
+  
+  /* backrgb(255, 255, 255)  #9747FF; */
+  /* border: none; */
+  /* border-radius: 4px; */
+  /* transition: all 300ms ease-in; */
+  }
+  .menuItem1{
+  font-size: 12px;
+  font-weight: 100;
+  padding: .6rem .5rem;
+ 
+  
+  /* background:  #9747FF; */
+  /* border: none; */
+  /* border-radius: 4px; */
+  /* transition: all 300ms ease-in; */
+  }
+  .menuItem2{
+  font-size: 12px;
+  font-weight: 100;
+  padding: .6rem .5rem;
+
+  
+  /* background:  #9747FF; */
+  /* border: none; */
+  /* border-radius: 4px; */
+  /* transition: all 300ms ease-in; */
+  }
+  .clicked{
+  /* color: rgb(0, 0, 0); */
+  font-size: 14px;
+  padding: .8rem 1.4rem;
+
+  font-weight: bold;
+  border-bottom: 2.5px solid #7a008a;
+  }
+  
+  .menuItem:hover{
+    font-weight: 600;
+  cursor: pointer;
+  transform: scale(1.1);
+  }
+  .menuItem1:hover{
+  font-weight: 600;
+  cursor: pointer;
+  transform: scale(1.1);
+  }
+  .menuItem2:hover{
+  font-weight: 600;
+  cursor: pointer;
+  transform: scale(1.1);
+  }
+  
+  
+  
+  
+  }

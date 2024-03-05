@@ -4,9 +4,11 @@
 }
 .filterinputs{
   gap: 1px;
+  width: 63.3vw;
 }
 .filters{
     gap: 5px;
+    width: 75vw;
 }
 
 .button{
@@ -32,13 +34,14 @@
   
   .selectField{
     height: 52px;
-    width: 430px;
+    width: 100%;
     text-align: center;
     border: none;
     /* border-bottom: 2px solid #e2e2e2;
     border-right: 0.5px solid #e2e2e2;
     border-left: 0.5px solid #e2e2e2; */
     color: #9747FF; 
+    width: 80vw;
     /* background-color: #f0f0f0; */
     font-weight: normal;
     transition: border-bottom-color 0.3s, color 0.3s, font-weight 0.3s;
@@ -59,7 +62,7 @@
     /* height: 52px; */
     /* border: 2px solid violet;  */
     /* height: 60px; */
-    width: 584px;
+    /* width: 584px; */
     border-radius: 5px; /* Border radius */
     /* padding: 10px;  */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
@@ -112,6 +115,7 @@
     }
     .filters{
       flex-direction: column;
+      padding-left: 5rem;
     
     }
     .selectField {
@@ -124,4 +128,19 @@
       padding: 1rem 9.1rem;
     }
       }
-    
+      @media (max-width: 425px){
+
+
+        .filterinputs{
+          flex-direction: column;
+          gap: 5px;
+        }
+        .filters{
+          flex-direction: column;
+          padding-left: 1rem;
+        
+        }
+        .button{
+          width: 39vw;
+        }
+      }

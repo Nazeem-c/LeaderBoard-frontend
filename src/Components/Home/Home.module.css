@@ -232,7 +232,7 @@
     .primaryFOnt5 {
       font-size: 14px; /* Decrease font size */
       line-height: 130%; /* Adjust line height */
-      text-decoration-line: underline;
+      /* text-decoration-line: underline; */
     }
   
     .primaryFOnt6 {
