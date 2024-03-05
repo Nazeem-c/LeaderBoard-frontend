@@ -5,9 +5,10 @@ import {
   fetchStudentData,
   fetchScoreCard,
 } from "../../Services/student/student";
-
+import Modal from "../Modal/Modal";
 import Select from "react-select";
-
+import { toast } from "react-toastify"; // Import toast from react-toastify
+import "react-toastify/dist/ReactToastify.css"; 
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Profile = () => {
@@ -18,36 +19,58 @@ const Profile = () => {
   const [marks, setMarks] = useState(null);
   const [sgpa, setSgpa] = useState(null);
   const [error, setError] = useState(null);
+  const [isLogoutModalOpen, setLogoutModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   //-----------------------------logout------------------------
   const studentId = sessionStorage.getItem("username");
   const location = useLocation();
   const navigate = useNavigate();
-  //   const [showLogoutModal, setShowLogoutModal] = useState(false);
   useEffect(() => {
-    // Check if the URL contains '/logout'
     if (location.pathname.includes("/logout")) {
-      // If yes, show a browser-level notification
-      const isConfirmed = window.confirm("Are you sure you want to logout?");
-
-      if (isConfirmed) {
-        sessionStorage.clear();
-        navigate("/");
-      } else {
-        navigate(`/students/${studentId}`); // Use backticks (`) for template literals
-      }
+      setShowModal(true); // Show modal if URL contains '/logout'
     }
-  }, [location.pathname, navigate, studentId]);
-
-  //=------------------------
-
+  }, [location.pathname]);
+ 
   useEffect(() => {
-    // Check if adminId is not present (user is not authenticated)
     if (!studentId) {
-      // Redirect to the home page
       navigate("/login");
+      toast.error("Unauthorized Access: Please log in to access this feature.",{
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }
   }, [studentId, navigate]);
+ 
+  // Remaining useEffect hooks and component logic
+ 
+  const confirmLogout = () => {
+    sessionStorage.clear();
+    navigate("/");
+    toast.success("LogOut Successful", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  };
+ 
+  const closeModal = () => {
+    setShowModal(false);
+    navigate(`/students/${studentId}`);
+  };
+  //=------------------------
+
 
   const handleSemesterChange = (selectedOption) => {
     const selectedValue = selectedOption.value;
@@ -268,7 +291,15 @@ const Profile = () => {
 
               </tbody>
             </table>
+            
           </div>
+          {showModal && (
+            <Modal
+              message="Are you sure you want to logout?"
+              onConfirm={confirmLogout}
+              onCancel={closeModal}
+            />
+          )}
         </div>
       ) : (
         navigate("/login")

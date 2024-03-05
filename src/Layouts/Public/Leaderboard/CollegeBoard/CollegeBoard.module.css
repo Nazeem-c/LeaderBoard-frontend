@@ -15,6 +15,7 @@
     width: 70px;
 }
 
+
 .button{
     font-weight: 500;
     padding: 1rem 2rem;
@@ -41,10 +42,12 @@
 }
 
 .headerbar{
+  width: 80vw;
 gap: 2px;
 }
 
 .header{
+ 
 color: var(--Gray-1, #000000);
 font-family: "Plus Jakarta Sans";
 font-size: 24px;
@@ -122,4 +125,18 @@ color: aqua;
 
   .maintable{
     width: 100%;
+  }
+
+
+  @media (max-width: 425px){
+
+    .wrapper{
+      /* position: fixed;
+      top: 70px;
+      width: 100%;
+      background-color: #F8F8F8; */
+      padding-left: 2.5rem;
+     
+      
+  }
   }

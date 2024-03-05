@@ -21,6 +21,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+  transition: all 0.3s ease; 
 }
 a {
   color: inherit;
@@ -104,6 +105,23 @@ br {
   color: orange;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.buttontoast{
+  font-weight: 400;
+  padding: .6rem 1.4rem;
+  color: #4d4d4d;
+  /* background-color: #9747FF; */
+  border: none;
+  border-radius: 4px;
+}
+.buttontoast:hover{
+  color: white;
+  background-color:var(--secondary) ;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 300ms ease-in;
+  
 }
 
 

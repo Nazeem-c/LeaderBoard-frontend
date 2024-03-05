@@ -2,7 +2,7 @@ import React from "react";
 import { FaList, FaUser, FaSignOutAlt } from "react-icons/fa";
 import { BrowserRouter, Routes, Route ,useParams} from "react-router-dom";
 import Styles from "./StudentRoutes.module.css";
-import SidebarStudent from "../../Components/SideBarStudent/SideBarStudent";
+import Sidebar from "../../Components/SideBar/Sidebar";
 import LeaderBoardRotes from "../Public/LeaderBoardRotes";
 import Profile from "../../Components/Profile/Profile";
 import Logout from "../../Components/Logout/Logout";
@@ -29,7 +29,7 @@ const StudentRoutes = () => {
   return (
     <div className="flexStart innerWidth background">
       {/* <BrowserRouter> */}
-      <SidebarStudent obj={obj} className={Styles.Sidebar} />
+      <Sidebar obj={obj} className={Styles.Sidebar} />
       <div className={`${Styles.Dahsboard} innerWidth flexColStart`}>
         <Routes>
           <Route path="/" element={<Profile />} />

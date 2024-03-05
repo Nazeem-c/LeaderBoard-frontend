@@ -10,7 +10,7 @@ const LoginForm = () => {
     username: "",
     password: "",
   });
-
+  const [loginSuccess, setLoginSuccess] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const LoginForm = () => {
 
       if (response.data.errorMessage) {
         setError(response.data.errorMessage);
-        toast.error(response.data.errorMessage,{
+        toast.error(response.data.errorMessage, {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -39,32 +39,24 @@ const LoginForm = () => {
           draggable: true,
           progress: undefined,
           theme: "light",
-          }); // Display error message as toast
+        }); // Display error message as toast
       } else {
         const { roll, user_id, username } = response.data.responseData;
 
         sessionStorage.setItem("roll", roll);
         sessionStorage.setItem("user_id", user_id);
         sessionStorage.setItem("username", username);
-
-        toast.success("Login Successful", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          }); // Display success message as toast
-
-        if (roll === "student") {
-          navigate(`/students/${username}`);
-        } else if (roll === "admin") {
-          navigate(`/admin/${username}`);
-        } else {
-          console.error("Invalid user role:", roll);
-        }
+        setLoginSuccess(true);
+        showToastWithDelay();// Display success message as toast
+        setTimeout(() => {
+          if (roll === "student") {
+            navigate(`/students/${username}`);
+          } else if (roll === "admin") {
+            navigate(`/admin/${username}`);
+          } else {
+            console.error("Invalid user role:", roll);
+          }
+        }, 2000);
       }
     } catch (error) {
       console.error("Error during login:", error);
@@ -78,15 +70,32 @@ const LoginForm = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
+      });
     }
   };
-
+  const showToastWithDelay = () => {
+    setTimeout(() => {
+      toast.success("Login Successful", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }, 2000); // Set the desired delay in milliseconds (e.g., 2000 milliseconds or 2 seconds)
+  };
   return (
     <div className={Styles.wrapper}>
       <div className={`${Styles.container} innerWidth`}>
         <div className={`${Styles.Banner} flexCenter`}>
-          <div className={Styles.leftBanner}>
+          <div
+            className={`${Styles.leftBanner} ${
+              loginSuccess ? Styles.successBackground : Styles.normalBackground
+            }`}
+          >
             <img
               src="Assets/logowhite.svg"
               alt=""
@@ -100,10 +109,32 @@ const LoginForm = () => {
                   <span>Welcome Back</span>
                   <span>You are one step away to your feed</span>
                 </div>
-                <img className={Styles.img} src="Assets/image1.svg" alt="" />
-              </div>
+                <div className={`Styles.imagewrapper`}>
+                <img className={Styles.img} src="Assets/login.svg" alt="" />
+                {loginSuccess ? (
+                  <>
+                    {/* Rectangle on the left side */}
+                    <div
+                      className={`${Styles.rectangle} ${Styles.leftRectangle} ${Styles.moving}`}
+                    ></div>
 
-             
+                    {/* Rectangle on the right side */}
+                    <div
+                      className={`${Styles.rectangle} ${Styles.rightRectangle} ${Styles.moving}`}
+                    ></div>
+                  </>
+                ) : (
+                  <>
+                    <div
+                      className={`${Styles.rectangle} ${Styles.notMovingleft}`}
+                    ></div>
+                    <div
+                      className={`${Styles.rectangle} ${Styles.notMovingright}`}
+                    ></div>
+                  </>
+                )}
+                </div>
+              </div>
             </div>
           </div>
           <div className={Styles.Login}>
@@ -112,7 +143,7 @@ const LoginForm = () => {
               <form onSubmit={handleFormSubmit}>
                 <label>Username:</label>
                 <input
-                className={Styles.inputtext}
+                  className={Styles.inputtext}
                   placeholder="username"
                   type="text"
                   name="username"
@@ -122,8 +153,7 @@ const LoginForm = () => {
                 {/* <br /> */}
                 <label>Password:</label>
                 <input
-
-className={Styles.inputtext}
+                  className={Styles.inputtext}
                   placeholder="password"
                   type="password"
                   name="password"
@@ -135,11 +165,12 @@ className={Styles.inputtext}
                   Login
                 </button>
                 <br />
-                {error &&  <div>
-          <p className={`${Styles.Error}`}>{error}</p>
-          </div>}
+                {error && (
+                  <div>
+                    <p className={`${Styles.Error}`}>{error}</p>
+                  </div>
+                )}
               </form>
-              
             </div>
           </div>
         </div>

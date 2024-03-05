@@ -5,6 +5,8 @@ import { mailing } from "../../Services/Admin/Admin";
 import { toast } from "react-toastify"; // Import toast from react-toastify
 import "react-toastify/dist/ReactToastify.css"; 
 import { useLocation, useNavigate } from "react-router-dom";
+import Modal from "../Modal/Modal";
+
 
 function Dashboard() {
 
@@ -13,7 +15,9 @@ function Dashboard() {
   const [stdId,setStdId] = useState();
   const [sem,setSem] = useState();
   const [data,setdata] = useState();
+  const [showModal, setShowModal] = useState(false);
 
+  
   const handlestdidChange = (event)=>{
     setStdId(event.target.value)
   }
@@ -28,29 +32,56 @@ function Dashboard() {
   console.log(adminId);
   const location = useLocation();
   const navigate = useNavigate();
-  //   const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+
+  
+
   useEffect(() => {
-    // Check if the URL contains '/logout'
     if (location.pathname.includes("/logout")) {
-      // If yes, show a browser-level notification
-      const isConfirmed = window.confirm("Are you sure you want to logout?");
-
-      if (isConfirmed) {
-        sessionStorage.clear();
-        navigate("/");
-      } else {
-        navigate(`/admin/${adminId}`); // Use backticks (`) for template literals
-      }
+      setShowModal(true); // Show modal if URL contains '/logout'
     }
-  }, [location.pathname, navigate, adminId]);
-
+  }, [location.pathname]);
   useEffect(() => {
-    // Check if adminId is not present (user is not authenticated)
     if (!adminId) {
-      // Redirect to the home page
       navigate("/login");
+      toast.error("Unauthorized Access: Please log in to access this feature.",{
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+
     }
   }, [adminId, navigate]);
+ 
+  // Remaining useEffect hooks and component logic
+ 
+  const confirmLogout = () => {
+    sessionStorage.clear();
+    navigate("/");
+    toast.success("LogOut Successful", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  };
+ 
+  const closeModal = () => {
+    setShowModal(false);
+    navigate(`/admin/${adminId}`);
+  };
+
+
+ 
 //--------------------------------------------------------------------------------
 
 const sendMail = async()=>{
@@ -195,6 +226,13 @@ setError("Error fetching leaderboard data. Please try again.");
           </div>}
             </div>
           </div>
+          {showModal && (
+            <Modal
+              message="Are you sure you want to logout?"
+              onConfirm={confirmLogout}
+              onCancel={closeModal}
+            />
+          )}
         </div>
       ) : (
         navigate("/")
