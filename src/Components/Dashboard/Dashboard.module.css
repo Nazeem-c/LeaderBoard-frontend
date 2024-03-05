@@ -51,8 +51,8 @@ width: 100%;
 }
 
 .mailactionbutton{
-    /* width: 400px; */
-    width: 100%;
+    width: 90%;
+    /* width: 67vw; */
     height: 52px;
 }
 .contain{
@@ -154,3 +154,18 @@ width: 100%;
     }
    
   }
+
+@media (max-width: 425px) {
+   
+  .wrapper{
+    /* position: relative; */
+  
+    width: 100vw;
+  }.inputs{
+    flex-direction: column;
+}
+.student{
+  align-items: center;
+}
+
+}
