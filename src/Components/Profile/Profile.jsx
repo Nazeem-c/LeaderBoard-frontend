@@ -7,6 +7,8 @@ import {
 } from "../../Services/student/student";
 import Modal from "../Modal/Modal";
 import Select from "react-select";
+import { toast } from "react-toastify"; // Import toast from react-toastify
+import "react-toastify/dist/ReactToastify.css"; 
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Profile = () => {
@@ -33,6 +35,16 @@ const Profile = () => {
   useEffect(() => {
     if (!studentId) {
       navigate("/login");
+      toast.error("Unauthorized Access: Please log in to access this feature.",{
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }
   }, [studentId, navigate]);
  
@@ -41,6 +53,16 @@ const Profile = () => {
   const confirmLogout = () => {
     sessionStorage.clear();
     navigate("/");
+    toast.success("LogOut Successful", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   };
  
   const closeModal = () => {
@@ -49,22 +71,6 @@ const Profile = () => {
   };
   //=------------------------
 
-  useEffect(() => {
-    // Check if studentId is not present (user is not authenticated)
-    if (!studentId) {
-      // Redirect to the home page
-      navigate('/login');
-    }
-  }, [studentId, navigate]);
-  //=------------------------
-
-  useEffect(() => {
-    // Check if adminId is not present (user is not authenticated)
-    if (!studentId) {
-      // Redirect to the home page
-      navigate("/login");
-    }
-  }, [studentId, navigate]);
 
   const handleSemesterChange = (selectedOption) => {
     const selectedValue = selectedOption.value;
