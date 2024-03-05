@@ -23,6 +23,7 @@ width: 100%;
 
 .Dashboard{
   height: 100vh;
+  transition: all 0.5s ease-in-out
   
 }
 .wrapper{

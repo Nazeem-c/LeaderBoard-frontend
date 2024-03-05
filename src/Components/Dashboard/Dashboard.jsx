@@ -34,6 +34,8 @@ function Dashboard() {
   const navigate = useNavigate();
 
 
+  
+
   useEffect(() => {
     if (location.pathname.includes("/logout")) {
       setShowModal(true); // Show modal if URL contains '/logout'

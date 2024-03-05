@@ -26,10 +26,66 @@
 
 
 
+/* Your existing styles */
+.seconddivision {
+  /* ... */
+}
+
+.innertext {
+  /* ... */
+}
+
+.img {
+  /* ... */
+}
+
+/* New styles for rectangles */
+.rectangle {
+  position: absolute;
+  top: 75.4vh;
+  width: 20px;
+  height: 42px;
+  background: white;
+  opacity: 1;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out; /* Add animation transition */
+}
+
+.imagewrapper{
+
+}
+
+.leftRectangle {
+  left: 44.3vw;
+}
+
+.rightRectangle {
+  left: 47.8vw;
+}
+
+.notMovingleft {
+  left: 46vw;
+}
+.notMovingright {
+  left: 47.3vw;
+}
+.moving {
+  transform: translateX(10px); /* Adjust the translation as needed */
+}
 
 
+.normalBackground {
+  background-color:var(--secondary);
+}
 
+.successBackground {
+  background-color: rgb(211, 211, 211); /* Change the background color for success */
+}
 
+.leftBanner {
+  /* Styles for your leftBanner */
+  transition: background-color 1s ease-in-out; /* Add transition to the background-color property */
+}
 
 .imagepad{
     padding: 20px;
@@ -39,10 +95,12 @@
     
 }
 
+
+
 .leftBanner{
     border-radius: 10px 0 0 10px;
     max-height: 600px;
-    background-color:var(--secondary);
+    /* background-color:var(--secondary); */
     width: 436px;
     /* max-width: 400px; */
     
@@ -73,7 +131,7 @@
     color: #333;
   }
   .Heading{
-    gap: 20px;
+    gap: 12px;
     padding-top: 20px;
     overflow: hidden; 
   }
@@ -86,7 +144,7 @@
   }
  
   .seconddivision{
-    gap: 40px;
+    gap: -10px;
   }
   /* Form styles */
   form {
@@ -192,7 +250,9 @@
     MARGIN-top: -55px;
     border-radius: 0px;
    }
- 
+ .rectangle{
+  visibility: hidden;
+ }
     }
 
     @media (max-width: 425px) {
@@ -202,6 +262,9 @@
       .leftBanner{
         height: 309px;
       }
+      .rectangle{
+        visibility: hidden;
+       }
       .Login{
     MARGIN-top: -55px;
     border-radius: 0px;
@@ -216,6 +279,9 @@
        height: 100vh;
        /* margin-top: 50px; */
       }
+      .rectangle{
+        visibility: hidden;
+       }
       .leftBanner{
         width: 500px;
         height: 300px;
