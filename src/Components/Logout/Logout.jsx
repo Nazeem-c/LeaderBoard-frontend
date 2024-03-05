@@ -14,7 +14,6 @@ function Logout() {
         // Perform logout actions, e.g., clear user session, etc.
         // ...
   
-        // Redirect to the login page after logout
         navigate('/login');
       }}
 
@@ -31,3 +30,4 @@ function Logout() {
 }
 
 export default Logout;
+
