@@ -3,7 +3,7 @@ import React from "react";
 import { FaChartBar, FaUser, FaSignOutAlt } from "react-icons/fa";
 import { BrowserRouter, Routes, Route ,useParams} from "react-router-dom";
 import Styles from "./AdminRoutes.module.css";
-import SidebarStudent from "../../Components/SideBarStudent/SideBarStudent";
+import Sidebar from "../../Components/SideBar/Sidebar";
 import Profile from "../../Components/Profile/Profile";
 import Dashboard from "../../Components/Dashboard/Dashboard";
 
@@ -26,7 +26,7 @@ function AdminRoutes() {
   return (
     <div className={`${Styles.Admin} flexStart background innerWidth `}>
     {/* <BrowserRouter> */}
-    <SidebarStudent obj={obj} className={Styles.Sidebar} />
+    <Sidebar obj={obj} className={Styles.Sidebar} />
     <div className={`${Styles.Dahsboard} innerWidth`}>
       <Routes>
         <Route path="/" element={<Dashboard/>} />

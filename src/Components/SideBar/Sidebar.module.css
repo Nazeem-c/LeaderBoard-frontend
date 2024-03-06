@@ -248,6 +248,7 @@ justify-content: center;
 
 
 @media (max-width: 425px) {
+   
     .Sidebar {
       width: 80%; /* Set initial width to 80% */
       position: fixed; /* Fix the position */
@@ -289,7 +290,13 @@ justify-content: center;
     }
   
     .item {
-      width: 100%; /* Set width to 100% to fit within the sidebar */
+        width: 230px; /* Set width to 100% to fit within the sidebar */
+    }
+    .logoDesign{
+        width: 80%;
+    }
+    .menuColumns{
+        margin-top: 50px;
     }
   }
   

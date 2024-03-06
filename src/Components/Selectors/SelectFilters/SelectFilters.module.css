@@ -1,13 +1,17 @@
 .filterbutton{
     /* width: 70px; */
     gap: 5px;
+    
 }
 .filterinputs{
   gap: 1px;
+  width: 63.3vw;
   
 }
 .filters{
+  width: 75vw;
     gap: 5px;
+    
 }
 
 .button{
@@ -33,7 +37,7 @@
   
   .selectField{
     height: 52px;
-    width: 430px;
+    width: 100%;
     text-align: center;
     border: none;
     
@@ -61,7 +65,8 @@
     /* height: 52px; */
     /* border: 2px solid violet;  */
     /* height: 60px; */
-    width: 389px;
+    width: 80vw;
+    
     border-radius: 5px; /* Border radius */
     /* padding: 10px;  */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
@@ -115,6 +120,7 @@
 }
 .filters{
   flex-direction: column;
+  padding-left: 5rem;
 
 }
 .selectField {
@@ -124,8 +130,24 @@
   gap: 7px;
 }
 .button{
+  
   padding: 1rem 9.1rem;
 }
   }
 
-@media (max-width: 425px){}
+  @media (max-width: 425px){
+
+
+    .filterinputs{
+      flex-direction: column;
+      gap: 5px;
+    }
+    .filters{
+      flex-direction: column;
+      padding-left: 1rem;
+    
+    }
+    .button{
+      width: 39vw;
+    }
+  }

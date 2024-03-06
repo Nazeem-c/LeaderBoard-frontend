@@ -1,11 +1,12 @@
 
 .customTable{
-    width: 1383px;
+  width: 74.9vw;
     border-radius: 60px;
     /* margin-right: 20px; */
     border-collapse: collapse;/* Remove default cell spacing */
   }
   
+ 
   .tablehead th, .tablebody td {
     /* border: 1px solid #ddd;  */
     /* Border for each cell */
@@ -20,7 +21,7 @@
     color: var(--secondary);
     font-weight: 600;/* Background color for header cells */
     text-align: center;
-    padding: 14px;
+    padding: 12px;
   }
 
 
@@ -55,8 +56,8 @@
     width: auto;
     height: 100%;
     position: static;
-    top: 0px;
-    /* overflow: scroll; */
+    /* top: 0px; */
+    /* overflow-y: scroll; */
     
   }
 
@@ -67,9 +68,9 @@
     align-items: center;
     margin-top: 20px;
 
-    position: absolute;
-  top: 84%;
-  left: 30%;
+    /* position: absolute; */
+  /* top: 84%; */
+  /* left: 30%; */
   }
   
   .button,
@@ -194,4 +195,37 @@
   }
   }
 
-  @media (max-width: 425px){}
+  @media (max-width: 425px){
+    .tablebody td{
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      border-bottom: 1px solid #ddd;
+      background-color: #ffffff;
+      letter-spacing: -0.5px;
+  }
+
+
+  .customTable{
+    width: 44.9vw;
+      border-radius: 60px;
+      /* margin-right: 20px; */
+      border-collapse: collapse;/* Remove default cell spacing */
+    }
+    .tablehead th {
+      background-color: #ffffff; 
+      border-bottom: 2px solid #dbaad5;
+      color: var(--secondary);
+      font-weight: 600;/* Background color for header cells */
+      text-align: center;
+      padding: 19.5px;
+      font-size: 12px;
+    }
+    .tablebody td:first-child,
+  .tablebody td:nth-child(2),
+  .tablebody td:last-child {
+    width: 5vw; /* Adjust the width as needed */
+    /* Add any additional styles you want for these columns */
+    
+  }
+  }
