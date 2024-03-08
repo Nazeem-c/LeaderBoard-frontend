@@ -42,7 +42,7 @@
 /* New styles for rectangles */
 .rectangle {
   position: absolute;
-  top: 75.4vh;
+  top: 75.3vh;
   width: 20px;
   height: 42px;
   background: white;
@@ -56,18 +56,18 @@
 }
 
 .leftRectangle {
-  left: 44.3vw;
+  left: 44.2vw;
 }
 
 .rightRectangle {
-  left: 47.8vw;
+  left: 47.3vw;
 }
 
 .notMovingleft {
-  left: 46vw;
+  left: 45.7vw;
 }
 .notMovingright {
-  left: 47.3vw;
+  left: 46.9vw;
 }
 .moving {
   transform: translateX(10px); /* Adjust the translation as needed */

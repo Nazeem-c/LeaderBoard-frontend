@@ -55,6 +55,14 @@ width: 100%;
     width: 90%;
     /* width: 67vw; */
     height: 52px;
+    
+}
+.mailactionbutton:hover{
+  background-color: var(--secondary);
+  color: white;
+  font-weight: 900;
+  transform: scale(1.02);
+  
 }
 .contain{
   width: 100%;
@@ -153,6 +161,11 @@ width: 100%;
       flex-direction: column;
       justify-content: center;
     }
+    .mailactionbutton{
+      width: 100%;
+      /* width: 67vw; */
+      height: 52px;
+  }
    
   }
 
@@ -167,6 +180,11 @@ width: 100%;
 }
 .student{
   align-items: center;
+}
+.mailactionbutton{
+  width: 100%;
+  /* width: 67vw; */
+  height: 52px;
 }
 
 }

@@ -3,6 +3,7 @@ import Styles from "./Sidebar.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { FaList } from "react-icons/fa";
 import { useParams } from "react-router-dom"; // Import useParams
+import Logo from "./Logo.svg"; 
 
 const Sidebar = ({ obj }) => {
   const { studentId } = useParams();
@@ -44,7 +45,7 @@ const Sidebar = ({ obj }) => {
         <div className={Styles.container}>
           <div className={Styles.wrapper}>
             <div className={`${Styles.logoDesign} flexStart`}>
-              <img src="Assets/Logo.svg" alt="logo" />
+              <img src={Logo} alt="logo" />
             </div>
             <div className={Styles.menuColumns}>
               <div className={`${Styles.menulist} flexColStart`}>
