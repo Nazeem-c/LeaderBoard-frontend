@@ -202,13 +202,15 @@
   @media (max-width: 425px){
     .tablebody td{
       text-align: center;
-      padding: 8px;
+      padding: px;
       font-size: 12px;
       border-bottom: 1px solid #ddd;
       background-color: #ffffff;
       letter-spacing: -0.5px;
   }
-
+  .tablebody th{
+    font-size: 14px;
+}
 
   .customTable{
     width: 44.9vw;
@@ -222,7 +224,7 @@
       color: var(--secondary);
       font-weight: 600;/* Background color for header cells */
       text-align: center;
-      padding: 7px;
+      padding: 2px;
       font-size: 12px;
     }
     .tablebody td:first-child,

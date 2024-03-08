@@ -85,7 +85,7 @@ const LoginForm = () => {
         progress: undefined,
         theme: "light",
       });
-    }, 2000); // Set the desired delay in milliseconds (e.g., 2000 milliseconds or 2 seconds)
+    }, 1500); // Set the desired delay in milliseconds (e.g., 2000 milliseconds or 2 seconds)
   };
   return (
     <div className={Styles.wrapper}>

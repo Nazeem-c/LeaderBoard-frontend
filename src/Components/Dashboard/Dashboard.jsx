@@ -17,7 +17,12 @@ function Dashboard() {
   const [data,setdata] = useState();
   const [showModal, setShowModal] = useState(false);
 
-  
+  //=-----------------------------------------------------
+
+
+
+
+  //-------------------------------------------------------
   const handlestdidChange = (event)=>{
     setStdId(event.target.value)
   }
@@ -58,8 +63,7 @@ function Dashboard() {
     }
   }, [adminId, navigate]);
  
-  // Remaining useEffect hooks and component logic
- 
+  
   const confirmLogout = () => {
     sessionStorage.clear();
     navigate("/");

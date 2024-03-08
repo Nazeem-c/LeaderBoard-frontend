@@ -218,7 +218,7 @@
       color: var(--secondary);
       font-weight: 600;/* Background color for header cells */
       text-align: center;
-      padding: 19.5px;
+      padding: 16px;
       font-size: 12px;
     }
     .tablebody td:first-child,

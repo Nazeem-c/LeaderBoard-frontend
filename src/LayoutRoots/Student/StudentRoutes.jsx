@@ -1,11 +1,9 @@
 import React from "react";
-import { FaList, FaUser, FaSignOutAlt } from "react-icons/fa";
-import { BrowserRouter, Routes, Route ,useParams} from "react-router-dom";
+import { FaUser, FaSignOutAlt } from "react-icons/fa";
+import { Routes, Route ,useParams} from "react-router-dom";
 import Styles from "./StudentRoutes.module.css";
 import Sidebar from "../../Components/SideBar/Sidebar";
-import LeaderBoardRotes from "../Public/LeaderBoardRotes";
 import Profile from "../../Components/Profile/Profile";
-import Logout from "../../Components/Logout/Logout";
 
 const StudentRoutes = () => {
   const { studentId } = useParams();
@@ -15,11 +13,7 @@ const StudentRoutes = () => {
       name: "Profile",
       link: `students/${studentId}`,
     },
-    // {
-    //   icon: FaList,
-    //   name: "Leaderboard",
-    //   link: `students/${studentId}/leaderboard`,
-    // },
+  
     {
       icon: FaSignOutAlt,
       name: "LogOut",
